@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>dpw-lyl-good-job-pay</artifactId>
-        <groupId>com.dpw.lyl.join.good.job</groupId>
+        <groupId>com.dpw.lyl.join.good.job.pay</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>good-job-pay-entity</artifactId>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>dpw.lyl.good.join.job.foundation</groupId>
@@ -19,8 +19,4 @@
         </dependency>
     </dependencies>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
 </project>

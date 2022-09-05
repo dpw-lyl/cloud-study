@@ -7,7 +7,6 @@
 		<groupId>com.dpw.lyl.join.good.job</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.dpw.lyl.join.good.job</groupId>
 	<artifactId>dpw-good-job-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>good-job-gateway</name>

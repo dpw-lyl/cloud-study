@@ -2,10 +2,10 @@ package com.dpw.lyl.join.good.job.strategy.alipay;
 
 
 
-import com.dpw.lyl.join.good.job.constant.PayServiceStrategyConstant;
-import com.dpw.lyl.join.good.job.entity.AliPayRequestParam;
-import com.dpw.lyl.join.good.job.entity.AliPayResponseParam;
-import com.dpw.lyl.join.good.job.entity.PayChannelResponseParam;
+import com.dpw.lyl.join.good.job.pay.constant.PayServiceStrategyConstant;
+import com.dpw.lyl.join.good.job.pay.entity.AliPayRequestParam;
+import com.dpw.lyl.join.good.job.pay.entity.AliPayResponseParam;
+import com.dpw.lyl.join.good.job.pay.entity.PayChannelResponseParam;
 import com.dpw.lyl.join.good.job.foundation.utils.SpringUtils;
 import com.dpw.lyl.join.good.job.strategy.AbstractChannelPayStrategy;
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<artifactId>dpw-lyl-good-job-pay</artifactId>
-		<groupId>com.dpw.lyl.join.good.job</groupId>
+		<groupId>com.dpw.lyl.join.good.job.pay</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>good-job-pay-server</artifactId>
@@ -21,13 +21,13 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.dpw.lyl.join.good.job</groupId>
+			<groupId>com.dpw.lyl.join.good.job.pay</groupId>
 			<artifactId>good-job-pay-entity</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.dpw.lyl.join.good.job</groupId>
+			<groupId>com.dpw.lyl.join.good.job.pay</groupId>
 			<artifactId>good-job-pay-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
