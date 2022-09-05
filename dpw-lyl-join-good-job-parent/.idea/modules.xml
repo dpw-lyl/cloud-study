@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dpw-good-job-gateway/dpw-good-job-gateway.iml" filepath="$PROJECT_DIR$/dpw-good-job-gateway/dpw-good-job-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/good-job-apply/dpw-lyl-good-job-apply.iml" filepath="$PROJECT_DIR$/good-job-apply/dpw-lyl-good-job-apply.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-autotask/dpw-lyl-good-job-auto-task.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-autotask/dpw-lyl-good-job-auto-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-foundation/dpw-lyl-good-job-foundation.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-foundation/dpw-lyl-good-job-foundation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-monitor/dpw-lyl-good-job-monitor.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-monitor/dpw-lyl-good-job-monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-openapi/dpw-lyl-good-job-openapi.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-openapi/dpw-lyl-good-job-openapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-pay/dpw-lyl-good-job-pay.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-pay/dpw-lyl-good-job-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-report/dpw-lyl-good-job-report.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-report/dpw-lyl-good-job-report.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-join-good-job-parent.iml" filepath="$PROJECT_DIR$/dpw-lyl-join-good-job-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-foundation/good-job-foundation/good-job-foundation.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-foundation/good-job-foundation/good-job-foundation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-pay/good-job-pay-dao/good-job-pay-dao.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-pay/good-job-pay-dao/good-job-pay-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-pay/good-job-pay-entity/good-job-pay-entity.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-pay/good-job-pay-entity/good-job-pay-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-pay/good-job-pay-server/good-job-pay-server.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-pay/good-job-pay-server/good-job-pay-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dpw-lyl-good-job-pay/good-job-pay-service/good-job-pay-service.iml" filepath="$PROJECT_DIR$/dpw-lyl-good-job-pay/good-job-pay-service/good-job-pay-service.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>good-job-foundation</module>
+    </modules>
+    <parent>
+        <artifactId>dpw-lyl-join-good-job-parent</artifactId>
+        <groupId>com.dpw.lyl.join.good.job</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>dpw.lyl.good.join.job.foundation</groupId>
+    <artifactId>dpw-lyl-good-job-foundation</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>dpw-lyl-good-job-foundation</name>
+    <description>基础能力</description>
+	<packaging>pom</packaging>
+</project>

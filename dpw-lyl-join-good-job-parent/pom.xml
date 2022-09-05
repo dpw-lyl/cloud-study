@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.13.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.dpw.lyl.join.good.job</groupId>
+    <artifactId>dpw-lyl-join-good-job-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>dpw-lyl-join-good-job-parent</name>
+    <description>技术整理父工程</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>dpw-good-job-gateway</module>
+        <module>dpw-lyl-good-job-apply</module>
+        <module>dpw-lyl-good-job-auto-task</module>
+        <module>dpw-lyl-good-job-foundation</module>
+        <module>dpw-lyl-good-job-monitor</module>
+        <module>dpw-lyl-good-job-openapi</module>
+        <module>dpw-lyl-good-job-pay</module>
+        <module>dpw-lyl-good-job-report</module>
+    </modules>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <jackson.version>2.13.3</jackson.version>
+        <IJPay.version>2.8.4</IJPay.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <protobuf.version>3.21.5</protobuf.version>
+        <hutool.version>5.8.5</hutool.version>
+        <msgpack.version>0.6.12</msgpack.version>
+        <alibaba.cloud.version>2.1.4.RELEASE</alibaba.cloud.version>
+        <spring.cloud.version>3.0.1</spring.cloud.version>
+    </properties>
+
+    <dependencies>
+        <!-- SpringBoot 拦截器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <version>${spring.cloud.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- jackson 2.x 相关依赖 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <!--IJPay 相关依赖-->
+        <dependency>
+            <groupId>com.github.javen205</groupId>
+            <artifactId>IJPay-AliPay</artifactId>
+            <version>${IJPay.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.javen205</groupId>
+            <artifactId>IJPay-WxPay</artifactId>
+            <version>${IJPay.version}</version>
+        </dependency>
+        <!-- <dependency>
+             <groupId>com.github.javen205</groupId>
+             <artifactId>IJPay-QQ</artifactId>
+             <version>${IJPay.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>com.github.javen205</groupId>
+             <artifactId>IJPay-JDPay</artifactId>
+             <version>${IJPay.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>com.github.javen205</groupId>
+             <artifactId>IJPay-UnionPay</artifactId>
+             <version>${IJPay.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>com.github.javen205</groupId>
+             <artifactId>IJPay-PayPal</artifactId>
+             <version>${IJPay.version}</version>
+         </dependency>-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+
+        <!-- 序列化组件，更加小巧 -->
+        <!-- https://mvnrepository.com/artifact/org.msgpack/msgpack -->
+        <dependency>
+            <groupId>org.msgpack</groupId>
+            <artifactId>msgpack</artifactId>
+            <version>${msgpack.version}</version>
+        </dependency>
+
+
+        <!--集成nacos-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>${alibaba.cloud.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>${alibaba.cloud.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
