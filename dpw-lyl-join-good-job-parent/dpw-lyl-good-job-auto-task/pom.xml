@@ -8,7 +8,7 @@
 		<groupId>com.dpw.lyl.join.good.job</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>dpw-lyl-good-job-autotask</artifactId>
+	<artifactId>dpw-lyl-good-job-auto-task</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dpw-lyl-good-job-auto-task</name>
 	<description>自动任务</description>
