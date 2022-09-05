@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.dpw.lyl.good.join.job</groupId>
-	<artifactId>good-job-apply</artifactId>
+	<artifactId>dpw-lyl-good-job-apply</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>good-job-apply</name>
 	<description>技术模块学习</description>

@@ -10,7 +10,7 @@
 	</parent>
 	<artifactId>dpw-lyl-good-job-autotask</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dpw-lyl-good-job-autotask</name>
+	<name>dpw-lyl-good-job-auto-task</name>
 	<description>自动任务</description>
 	<properties>
 		<java.version>1.8</java.version>
