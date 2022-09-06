@@ -3,33 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>dpw-lyl-good-job-pay</artifactId>
-        <groupId>com.dpw.lyl.join.good.job.pay</groupId>
+        <artifactId>dpw-lyl-good-job-foundation</artifactId>
+        <groupId>com.dpw.lyl.join.good.job.foundation</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>good-job-pay-service</artifactId>
+    <artifactId>good-job-foundation-common</artifactId>
     <packaging>jar</packaging>
-    <dependencies>
-        <dependency>
-            <groupId>com.dpw.lyl.join.good.job.pay</groupId>
-            <artifactId>good-job-pay-entity</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.dpw.lyl.join.good.job.pay</groupId>
-            <artifactId>good-job-pay-entity</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
-
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
 
     <build>
         <plugins>

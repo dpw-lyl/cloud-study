@@ -15,12 +15,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>dpw.lyl.good.join.job.foundation</groupId>
-			<artifactId>good-job-foundation</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>com.dpw.lyl.join.good.job.pay</groupId>
 			<artifactId>good-job-pay-entity</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
