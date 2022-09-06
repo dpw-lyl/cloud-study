@@ -11,7 +11,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>good-job-gateway</name>
 	<packaging>pom</packaging>
-	<description>系统网关</description>
+	<description>系统网关模块</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

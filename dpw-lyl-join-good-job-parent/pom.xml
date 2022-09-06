@@ -24,6 +24,7 @@
         <module>dpw-lyl-good-job-openapi</module>
         <module>dpw-lyl-good-job-pay</module>
         <module>dpw-lyl-good-job-report</module>
+        <module>dpw-lyl-good-job-iot</module>
     </modules>
 
 

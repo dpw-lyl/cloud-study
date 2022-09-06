@@ -12,7 +12,7 @@
 	<artifactId>dpw-lyl-good-job-openapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>com.dpw.lyl.join.good.job</name>
-	<description>外部接口对接</description>
+	<description>外部接口对接技术支持</description>
 	<packaging>pom</packaging>
 
 </project>

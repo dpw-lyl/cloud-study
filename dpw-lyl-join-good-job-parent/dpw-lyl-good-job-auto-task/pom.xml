@@ -12,6 +12,6 @@
 	<artifactId>dpw-lyl-good-job-auto-task</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dpw-lyl-good-job-auto-task</name>
-	<description>自动任务</description>
+	<description>自动任务模块</description>
 	<packaging>pom</packaging>
 </project>

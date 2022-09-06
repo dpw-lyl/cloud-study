@@ -12,7 +12,7 @@
 	<artifactId>dpw-lyl-good-job-pay</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dpw-lyl-good-job-pay</name>
-	<description>支付技术</description>
+	<description>支付技术支持</description>
 	<packaging>pom</packaging>
 	<modules>
 		<module>good-job-pay-entity</module>

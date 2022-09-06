@@ -12,6 +12,6 @@
 	<artifactId>dpw-lyl-good-job-report</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dpw-lyl-good-job-report</name>
-	<description>报表技术</description>
+	<description>报表技术支持</description>
 	<packaging>pom</packaging>
 </project>
