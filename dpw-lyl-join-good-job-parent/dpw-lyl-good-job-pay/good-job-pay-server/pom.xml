@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>dpw-lyl-good-job-pay</artifactId>
-		<groupId>com.dpw.lyl.join.good.job.pay</groupId>
+		<groupId>com.dpw.lyl.join.good.job</groupId>
+		<artifactId>pay</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>good-job-pay-server</artifactId>
+	<artifactId>pay-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>good-job-pay-server</name>
 	<description>支付web</description>
@@ -15,14 +15,14 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.dpw.lyl.join.good.job.pay</groupId>
-			<artifactId>good-job-pay-entity</artifactId>
+			<groupId>com.dpw.lyl.join.good.job</groupId>
+			<artifactId>pay-entity</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.dpw.lyl.join.good.job.pay</groupId>
-			<artifactId>good-job-pay-service</artifactId>
+			<groupId>com.dpw.lyl.join.good.job</groupId>
+			<artifactId>pay-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
