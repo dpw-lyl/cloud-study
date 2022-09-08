@@ -21,6 +21,24 @@
 		<module>good-job-openapi-server</module>
 	</modules>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.dpw.lyl.join.good.job.foundation</groupId>
+			<artifactId>good-job-foundation-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web-services</artifactId>
+		</dependency>
+	</dependencies>
+
+
 	<build>
 		<plugins>
 			<plugin>

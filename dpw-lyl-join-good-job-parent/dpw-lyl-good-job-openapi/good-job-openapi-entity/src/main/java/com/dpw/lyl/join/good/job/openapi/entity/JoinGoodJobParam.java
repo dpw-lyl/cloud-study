@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.pay.entity;
+package com.dpw.lyl.join.good.job.openapi.entity;
 
 
 import com.dpw.lyl.join.good.job.foundation.base.BaseParam;

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: myapplication
+    name: good-job-auto-task
   profiles:
     active: dev
   cloud:
@@ -12,7 +12,7 @@ spring:
         namespace: f8105ddd-3ef4-431f-b3ae-aa017157911a
         timeout: 3000
         refresh-enable: true #修改后自动加载
-        group: DEFAULT_GROUP #配置组
+        group: AUTO_TASK_APPLICATION #配置组
         prefix: ${spring.application.name}
         file-extension: yaml #读取nacos配置文件后缀
       discovery:

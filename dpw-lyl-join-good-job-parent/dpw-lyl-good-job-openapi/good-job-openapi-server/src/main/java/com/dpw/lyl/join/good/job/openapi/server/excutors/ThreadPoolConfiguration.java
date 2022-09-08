@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.foundation.config;
+package com.dpw.lyl.join.good.job.openapi.server.excutors;
 
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Value;

@@ -26,6 +26,45 @@
 			<artifactId>good-job-foundation-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web-services</artifactId>
+		</dependency>
+		<!--IJPay 相关依赖-->
+		<dependency>
+			<groupId>com.github.javen205</groupId>
+			<artifactId>IJPay-AliPay</artifactId>
+			<version>${IJPay.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.javen205</groupId>
+			<artifactId>IJPay-WxPay</artifactId>
+			<version>${IJPay.version}</version>
+		</dependency>
+		<!-- <dependency>
+             <groupId>com.github.javen205</groupId>
+             <artifactId>IJPay-QQ</artifactId>
+             <version>${IJPay.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>com.github.javen205</groupId>
+             <artifactId>IJPay-JDPay</artifactId>
+             <version>${IJPay.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>com.github.javen205</groupId>
+             <artifactId>IJPay-UnionPay</artifactId>
+             <version>${IJPay.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>com.github.javen205</groupId>
+             <artifactId>IJPay-PayPal</artifactId>
+             <version>${IJPay.version}</version>
+         </dependency>-->
 	</dependencies>
 
 	<build>

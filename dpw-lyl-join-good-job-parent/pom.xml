@@ -5,8 +5,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.13.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+       <version>2.3.9.RELEASE</version>
+        <relativePath/>
     </parent>
     <groupId>com.dpw.lyl.join.good.job</groupId>
     <artifactId>dpw-lyl-join-good-job-parent</artifactId>
@@ -16,7 +16,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>dpw-good-job-gateway</module>
+        <module>dpw-lyl-good-job-gateway</module>
         <module>dpw-lyl-good-job-apply</module>
         <module>dpw-lyl-good-job-auto-task</module>
         <module>dpw-lyl-good-job-foundation</module>
@@ -30,14 +30,14 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <jackson.version>2.13.3</jackson.version>
+        <jackson.version>2.13.4</jackson.version>
         <IJPay.version>2.8.4</IJPay.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <protobuf.version>3.21.5</protobuf.version>
-        <hutool.version>5.8.5</hutool.version>
+        <hutool.version>5.8.6</hutool.version>
         <msgpack.version>0.6.12</msgpack.version>
-        <alibaba.cloud.version>2.1.4.RELEASE</alibaba.cloud.version>
-        <spring.cloud.version>3.0.1</spring.cloud.version>
+        <alibaba.cloud.version>2021.1</alibaba.cloud.version>
+        <spring.cloud.version>3.1.4</spring.cloud.version>
     </properties>
 
     <dependencies>
@@ -47,37 +47,17 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web-services</artifactId>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session-core</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
             <version>${spring.cloud.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.projectreactor</groupId>
@@ -100,37 +80,7 @@
             <artifactId>jackson-annotations</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        <!--IJPay 相关依赖-->
-        <dependency>
-            <groupId>com.github.javen205</groupId>
-            <artifactId>IJPay-AliPay</artifactId>
-            <version>${IJPay.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.javen205</groupId>
-            <artifactId>IJPay-WxPay</artifactId>
-            <version>${IJPay.version}</version>
-        </dependency>
-        <!-- <dependency>
-             <groupId>com.github.javen205</groupId>
-             <artifactId>IJPay-QQ</artifactId>
-             <version>${IJPay.version}</version>
-         </dependency>
-         <dependency>
-             <groupId>com.github.javen205</groupId>
-             <artifactId>IJPay-JDPay</artifactId>
-             <version>${IJPay.version}</version>
-         </dependency>
-         <dependency>
-             <groupId>com.github.javen205</groupId>
-             <artifactId>IJPay-UnionPay</artifactId>
-             <version>${IJPay.version}</version>
-         </dependency>
-         <dependency>
-             <groupId>com.github.javen205</groupId>
-             <artifactId>IJPay-PayPal</artifactId>
-             <version>${IJPay.version}</version>
-         </dependency>-->
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
