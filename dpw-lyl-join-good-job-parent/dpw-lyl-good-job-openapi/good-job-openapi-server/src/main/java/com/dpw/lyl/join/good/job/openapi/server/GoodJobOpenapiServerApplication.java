@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableScheduling
-@ComponentScan(basePackages = "com.dpw.lyl.join.good.job.openapi")
+@ComponentScan(basePackages = "com.dpw.lyl.join.good.job")
 public class GoodJobOpenapiServerApplication {
 
 	public static void main(String[] args) {

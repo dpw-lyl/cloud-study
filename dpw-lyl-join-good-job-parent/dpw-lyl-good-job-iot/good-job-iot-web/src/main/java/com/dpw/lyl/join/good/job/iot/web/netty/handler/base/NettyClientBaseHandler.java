@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.foundation.netty.handler.base;
+package com.dpw.lyl.join.good.job.iot.web.netty.handler.base;
 
 import io.netty.channel.SimpleChannelInboundHandler;
 

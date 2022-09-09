@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.foundation.netty.message;
+package com.dpw.lyl.join.good.job.iot.web.netty.message;
 
 import lombok.Data;
 

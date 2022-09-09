@@ -2,6 +2,7 @@ package com.dpw.lyl.join.good.job.openapi.server.excutors;
 
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -108,6 +109,7 @@ public class ThreadPoolConfiguration {
      * @return: org.springframework.web.client.RestTemplate
      */
     @Bean
+    @LoadBalanced
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }

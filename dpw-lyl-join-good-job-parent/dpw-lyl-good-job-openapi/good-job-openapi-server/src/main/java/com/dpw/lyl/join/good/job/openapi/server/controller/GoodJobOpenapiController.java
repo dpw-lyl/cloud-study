@@ -4,7 +4,7 @@ import com.dpw.lyl.join.good.job.foundation.MsgResponse;
 import com.dpw.lyl.join.good.job.foundation.ResponseCodeEnum;
 import com.dpw.lyl.join.good.job.foundation.base.BaseHandler;
 import com.dpw.lyl.join.good.job.foundation.base.BaseParam;
-import com.dpw.lyl.join.good.job.openapi.server.util.SpringUtils;
+import com.dpw.lyl.join.good.job.foundation.utils.SpringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import lombok.extern.slf4j.Slf4j;
@@ -48,7 +48,7 @@ public class GoodJobOpenapiController {
 
 
     @RequestMapping(value = "/test/{handlerName}", produces = "application/json;charset=utf-8", method = RequestMethod.POST)
-    public MsgResponse test(@PathVariable("handlerName") String handlerName, HttpServletRequest servletRequest) throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public MsgResponse openapi(@PathVariable("handlerName") String handlerName, HttpServletRequest servletRequest) throws IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Optional<BaseHandler> optional = hasHandlerMap.getOrDefault(handlerName, Optional.empty());
         if (!optional.isPresent()) {
             for (BaseHandler handler : handlers) {

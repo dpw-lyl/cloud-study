@@ -1,5 +1,6 @@
-package com.dpw.lyl.join.good.job.foundation.netty.template;
+package com.dpw.lyl.join.good.job.iot.web.netty.template;
 
+import com.alibaba.fastjson2.JSONObject;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -11,17 +12,17 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @Author: dengpw
- * @createTime: 2022年08月22日 11:34:23
+ * @createTime: 2022年08月22日 11:33:14
  * @version: 1.0.0
- * @Description: Netty服务端上下文模板处理器
+ * @Description: Netty客户端全局上下文模板处理器
  */
 @Slf4j
 @Component
-public class NettyServerTemplate {
+public class NettyClientTemplate {
     /**
      * 全局存储netty上下文容器（分布式系统用zk或者redis）
      */
-    public static Map<String, Channel> serverChannelMap = new ConcurrentHashMap<>(16);
+    public static Map<String, Channel> clientChannelMap = new ConcurrentHashMap<>(16);
 
     /**
      * @author: dengpw
@@ -30,8 +31,8 @@ public class NettyServerTemplate {
      * @param:
      * @return: void
      */
-    public void saveServerChannel(Channel channel){
-        serverChannelMap.put(channel.id().asLongText(),channel);
+    public void saveClientChannel(Channel channel){
+        clientChannelMap.put(channel.id().asLongText(),channel);
     };
 
     /**
@@ -41,8 +42,8 @@ public class NettyServerTemplate {
      * @param: channelId - [String]
      * @return: java.lang.Object
      */
-    public Object getServerChannelByChannelId(String channelId){
-        return serverChannelMap.get(channelId);
+    public Object getClientChannelByChannelId(String channelId){
+        return clientChannelMap.get(channelId);
     }
 
     /**
@@ -52,8 +53,8 @@ public class NettyServerTemplate {
      * @param: channel - [Channel]
      * @return: void
      */
-    public void deleteServerChannel(Channel channel){
-        serverChannelMap.remove(channel.id().asLongText());
+    public void deleteClientChannel(Channel channel){
+        clientChannelMap.remove(channel.id().asLongText());
     }
 
     /**
@@ -64,7 +65,7 @@ public class NettyServerTemplate {
      * @return: java.util.List<java.lang.String>
      */
     public List<String> getOnlineList(){
-        return new ArrayList<>(serverChannelMap.keySet());
+        return new ArrayList<>(clientChannelMap.keySet());
     };
 
     /**
@@ -74,8 +75,8 @@ public class NettyServerTemplate {
      * @param:
      * @return: int
      */
-    public int serverChannelSize(){
-        return serverChannelMap.size();
+    public int clientChannelSize(){
+        return clientChannelMap.size();
     }
 
     /**

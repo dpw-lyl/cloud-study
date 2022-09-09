@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.foundation.config;
+package com.dpw.lyl.join.good.job.iot.web.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

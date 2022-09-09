@@ -1,8 +1,9 @@
-package com.dpw.lyl.join.good.job.foundation.netty.client;
+package com.dpw.lyl.join.good.job.iot.web.netty.client;
 
-import com.alibaba.fastjson.JSONObject;
-import com.dpw.lyl.join.good.job.foundation.netty.handler.ClientChannelInitializer;
-import com.dpw.lyl.join.good.job.foundation.netty.template.NettyClientTemplate;
+
+import com.alibaba.fastjson2.JSONObject;
+import com.dpw.lyl.join.good.job.iot.web.netty.handler.ClientChannelInitializer;
+import com.dpw.lyl.join.good.job.iot.web.netty.template.NettyClientTemplate;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -90,7 +91,7 @@ public class NettyClient {
             bizContent.put("serviceName",serviceInterface.getName());
             bizContent.put("methodName",method.getName());
             bizContent.put("params",objects);
-            return nettyClientTemplate.sendMsg(bizContent,channel);
+            return NettyClientTemplate.sendMsgByChannel(bizContent.toJSONString(),channel);
         }
     }
 

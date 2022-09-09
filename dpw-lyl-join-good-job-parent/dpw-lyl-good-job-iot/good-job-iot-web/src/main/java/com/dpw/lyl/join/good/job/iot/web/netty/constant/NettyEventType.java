@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.foundation.netty.constant;
+package com.dpw.lyl.join.good.job.iot.web.netty.constant;
 
 /**
  * @Author: dengpw

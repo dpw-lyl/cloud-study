@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.foundation.config;
+package com.dpw.lyl.join.good.job.iot.web.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

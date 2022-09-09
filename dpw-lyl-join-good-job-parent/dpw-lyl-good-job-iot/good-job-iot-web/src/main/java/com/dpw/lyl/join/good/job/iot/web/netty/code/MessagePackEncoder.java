@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.foundation.netty.code;
+package com.dpw.lyl.join.good.job.iot.web.netty.code;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
