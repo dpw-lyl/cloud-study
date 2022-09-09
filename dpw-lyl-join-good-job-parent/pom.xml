@@ -19,6 +19,7 @@
         <module>dpw-lyl-good-job-pay</module>
         <module>dpw-lyl-good-job-report</module>
         <module>dpw-lyl-good-job-iot</module>
+        <module>dpw-lyl-good-job-mybatis-generator-code</module>
     </modules>
 
 
@@ -34,6 +35,11 @@
         <spring.cloud.version>2020.0.1</spring.cloud.version>
         <fastjson.version>2.0.12.graal</fastjson.version>
         <spring.boot.version>2.4.2</spring.boot.version>
+        <mybatis-plus.version>3.4.3</mybatis-plus.version>
+        <freemarker.version>2.3.31</freemarker.version>
+        <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
+        <alibaba.druid.version>1.1.9</alibaba.druid.version>
+        <swagger.version>2.7.0</swagger.version>
     </properties>
 
     <dependencyManagement>
@@ -55,7 +61,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <!--Spring-cloud版本管理-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -64,6 +69,54 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--mybatis_plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!--生成器依赖-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
+            <!--MyBatis-Plus 从 3.0.3 之后移除了代码生成器与模板引擎的默认依赖，需要手动添加相关依赖：-->
+            <!--添加 模板引擎 依赖，MyBatis-Plus 支持 Velocity（默认）、
+            Freemarker、Beetl，用户可以选择自己熟悉的模板引擎，
+            如果都不满足您的要求，可以采用自定义模板引擎。-->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+
+            <!-- druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${alibaba.druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!--mysql-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -82,7 +135,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
-
 
         <dependency>
             <groupId>io.projectreactor</groupId>
