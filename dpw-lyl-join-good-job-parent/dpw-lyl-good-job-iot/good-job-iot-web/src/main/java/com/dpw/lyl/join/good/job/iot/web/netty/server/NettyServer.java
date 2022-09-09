@@ -1,6 +1,6 @@
-package com.dpw.lyl.join.good.job.foundation.netty.server;
+package com.dpw.lyl.join.good.job.iot.web.netty.server;
 
-import com.dpw.lyl.join.good.job.foundation.netty.handler.NettyServerChannelInitializer;
+import com.dpw.lyl.join.good.job.iot.web.netty.handler.NettyServerChannelInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;

@@ -1,8 +1,8 @@
-package com.dpw.lyl.join.good.job.foundation.netty.handler;
+package com.dpw.lyl.join.good.job.iot.web.netty.handler;
 
 import cn.hutool.core.collection.CollectionUtil;
-import com.dpw.lyl.join.good.job.foundation.config.NettyHeartBeat;
-import com.dpw.lyl.join.good.job.foundation.netty.handler.base.NettyClientBaseHandler;
+import com.dpw.lyl.join.good.job.iot.web.config.NettyHeartBeat;
+import com.dpw.lyl.join.good.job.iot.web.netty.handler.base.NettyClientBaseHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.string.StringDecoder;

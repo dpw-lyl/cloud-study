@@ -1,8 +1,8 @@
-package com.dpw.lyl.join.good.job.foundation.netty.handler;
+package com.dpw.lyl.join.good.job.iot.web.netty.handler;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dpw.lyl.join.good.job.foundation.netty.constant.NettyCodeEnum;
-import com.dpw.lyl.join.good.job.foundation.netty.handler.base.NettyServerBaseHandler;
+import com.dpw.lyl.join.good.job.iot.web.netty.constant.NettyCodeEnum;
+import com.dpw.lyl.join.good.job.iot.web.netty.handler.base.NettyServerBaseHandler;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.timeout.IdleStateEvent;
