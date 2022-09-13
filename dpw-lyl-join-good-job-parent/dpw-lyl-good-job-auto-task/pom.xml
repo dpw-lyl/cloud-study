@@ -10,7 +10,7 @@
 	</parent>
 	<artifactId>auto-task</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>auto-task</name>
+	<name>dpw-lyl-good-job-auto-task</name>
 	<description>自动任务模块</description>
 	<packaging>pom</packaging>
 	<modules>
@@ -34,45 +34,4 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<!-- 指定该Main Class为全局的唯一入口 这里是启动类的地址 -->
-					<mainClass>com.dpw.lyl.join.good.job.auto.task.server.GoodJobAutoTaskServerApplication</mainClass>
-					<layout>ZIP</layout>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-		<!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
-		<!--<resources>
-			<resource>
-				<directory>src/main/java</directory>
-				<includes>
-					<include>**/*.yml</include>
-					<include>**/*.xml</include>
-				</includes>
-				<filtering>false</filtering>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<includes>
-					<include>**/*.yml</include>
-					<include>**/*.xml</include>
-				</includes>
-				<filtering>false</filtering>
-			</resource>
-		</resources>-->
-
-	</build>
 </project>

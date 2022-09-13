@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>dpw-lyl-good-job-foundation</artifactId>
-        <groupId>com.dpw.lyl.join.good.job.foundation</groupId>
+        <groupId>com.dpw.lyl.join.good.job</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -16,6 +16,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
                 <!-- 解决没有main函数报错unable to find main class 的问题-->
                 <executions>
                     <execution>

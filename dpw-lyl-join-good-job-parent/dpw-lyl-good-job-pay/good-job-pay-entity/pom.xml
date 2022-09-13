@@ -16,6 +16,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
                 <!-- 解决没有main函数报错unable to find main class 的问题-->
                 <executions>
                     <execution>
