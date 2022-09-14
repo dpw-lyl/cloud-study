@@ -16,6 +16,9 @@
         <module>good-job-foundation-log</module>
         <module>good-job-foundation-data-scope</module>
         <module>good-job-foundation-datasource</module>
+        <module>good-job-foundation-redis</module>
+        <module>good-job-foundation-security</module>
+        <module>good-job-foundation-swagger</module>
     </modules>
     <dependencies>
         <dependency>

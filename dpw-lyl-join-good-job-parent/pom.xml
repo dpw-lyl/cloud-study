@@ -24,6 +24,7 @@
 
 
     <properties>
+        <job.project.verson>0.0.1-SNAPSHOT</job.project.verson>
         <java.version>1.8</java.version>
         <jackson.version>2.13.4</jackson.version>
         <IJPay.version>2.8.4</IJPay.version>

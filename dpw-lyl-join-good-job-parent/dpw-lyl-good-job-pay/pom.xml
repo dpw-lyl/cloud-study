@@ -23,7 +23,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.dpw.lyl.join.good.job</groupId>
-			<artifactId>good-job-foundation-common</artifactId>
+			<artifactId>foundation-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
