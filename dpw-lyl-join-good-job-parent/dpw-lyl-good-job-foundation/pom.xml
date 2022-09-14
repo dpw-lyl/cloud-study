@@ -8,7 +8,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>dpw-lyl-good-job-foundation</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>dpw-lyl-good-job-foundation</name>
     <description>基础能力支持</description>
 	<packaging>pom</packaging>

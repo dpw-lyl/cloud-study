@@ -3,6 +3,7 @@ package com.dpw.lyl.join.good.job.foundation.biz;
 import com.dpw.lyl.join.good.job.foundation.ResponseCodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @Author: dengpw
@@ -10,6 +11,7 @@ import lombok.Data;
  * @version: 1.0.0
  * @Description: 全局业务异常处理器
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 public class BizException extends RuntimeException {

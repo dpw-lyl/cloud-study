@@ -20,7 +20,7 @@
 				<version>${spring.boot.version}</version>
 				<configuration>
 					<!-- 指定该Main Class为全局的唯一入口 这里是启动类的地址 -->
-					<mainClass>com.dpw.lyl.join.good.job.auto.task.server.GoodJobAutoTaskServerApplication</mainClass>
+					<mainClass>com.dpw.lyl.join.good.job.auto.task.GoodJobAutoTaskServerApplication</mainClass>
 					<layout>ZIP</layout>
 				</configuration>
 				<executions>

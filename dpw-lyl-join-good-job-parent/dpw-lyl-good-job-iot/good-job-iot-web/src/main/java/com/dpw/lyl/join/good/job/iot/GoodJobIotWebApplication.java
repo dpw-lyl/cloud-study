@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.iot.web;
+package com.dpw.lyl.join.good.job.iot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -8,7 +8,7 @@ import lombok.NonNull;
  * @version: 1.0.0
  * @Description: 外部接口基础接口
  */
-public interface BaseHandler<T extends BaseParam ,B extends BaseResult > {
+public interface BaseHandler<T extends BaseParam,B extends BaseResult> {
 
 
     @NonNull

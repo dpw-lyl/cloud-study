@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.auto.task.server;
+package com.dpw.lyl.join.good.job.auto.task;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

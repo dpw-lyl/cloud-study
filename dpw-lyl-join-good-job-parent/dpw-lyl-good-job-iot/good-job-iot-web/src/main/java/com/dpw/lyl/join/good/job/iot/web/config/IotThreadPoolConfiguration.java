@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.openapi.server.excutors;
+package com.dpw.lyl.join.good.job.iot.web.config;
 
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.concurrent.Executors;
 
 @Configuration
-public class ThreadPoolConfiguration {
+public class IotThreadPoolConfiguration {
 
     /**
      * 核心线程数
