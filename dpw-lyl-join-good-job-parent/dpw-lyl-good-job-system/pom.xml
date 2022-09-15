@@ -7,10 +7,9 @@
 		<groupId>com.dpw.lyl.join.good.job</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.dpw.lyl.join.good.job.apply</groupId>
-	<artifactId>dpw-lyl-good-job-apply</artifactId>
+	<artifactId>system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dpw-lyl-good-job-apply</name>
+	<name>good-job-system</name>
 	<description>技术模块学习</description>
 	<packaging>pom</packaging>
 

@@ -46,4 +46,9 @@ public class BizException extends RuntimeException {
     public BizException (ResponseCodeEnum responseCodeEnum){
       this(responseCodeEnum.getReturnCode(),responseCodeEnum.getReturnMsg());
     }
+
+    public BizException(String msg){
+        this(ResponseCodeEnum.SYSTEM_ERROR.getReturnCode(),msg);
+    }
+
 }

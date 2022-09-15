@@ -114,4 +114,5 @@ public class MsgResponse<T> {
         msgResponse.setData(data);
         return msgResponse;
     }
+
 }

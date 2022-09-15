@@ -8,10 +8,12 @@
 		<groupId>com.dpw.lyl.join.good.job</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.dpw.lyl.join.good.job.monitor</groupId>
-	<artifactId>dpw-lyl-good-job-monitor</artifactId>
+	<artifactId>monitor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>dpw-lyl-good-job-monitor</name>
 	<description>系统监控模块</description>
 	<packaging>pom</packaging>
+	<modules>
+		<module>good-job-system-monitor-server</module>
+	</modules>
 </project>

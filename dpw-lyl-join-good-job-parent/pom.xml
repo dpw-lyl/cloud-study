@@ -11,7 +11,7 @@
 
     <modules>
         <module>dpw-lyl-good-job-gateway</module>
-        <module>dpw-lyl-good-job-apply</module>
+        <module>dpw-lyl-good-job-system</module>
         <module>dpw-lyl-good-job-auto-task</module>
         <module>dpw-lyl-good-job-foundation</module>
         <module>dpw-lyl-good-job-monitor</module>
@@ -20,6 +20,7 @@
         <module>dpw-lyl-good-job-report</module>
         <module>dpw-lyl-good-job-iot</module>
         <module>dpw-lyl-good-job-mybatis-generator-code</module>
+        <module>dpw-lyl-good-job-file</module>
     </modules>
 
 
@@ -39,8 +40,8 @@
         <mybatis-plus.version>3.4.3</mybatis-plus.version>
         <freemarker.version>2.3.31</freemarker.version>
         <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
-        <alibaba.druid.version>1.1.9</alibaba.druid.version>
-        <swagger.version>2.7.0</swagger.version>
+        <alibaba.druid.version>1.2.12</alibaba.druid.version>
+        <swagger.version>3.0.0</swagger.version>
         <swagger.core.version>1.6.2</swagger.core.version>
         <transmittable-thread-local.version>2.13.2</transmittable-thread-local.version>
         <jjwt.version>0.9.1</jjwt.version>
@@ -49,6 +50,7 @@
         <commons.io.version>2.11.0</commons.io.version>
         <minio.version>8.2.2</minio.version>
         <poi.version>4.1.2</poi.version>
+        <dynamic-ds.version>3.5.2</dynamic-ds.version>
     </properties>
 
     <dependencyManagement>

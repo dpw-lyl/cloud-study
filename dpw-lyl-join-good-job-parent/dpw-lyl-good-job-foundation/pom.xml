@@ -19,6 +19,7 @@
         <module>good-job-foundation-redis</module>
         <module>good-job-foundation-security</module>
         <module>good-job-foundation-swagger</module>
+        <module>good-job-foundation-common-api</module>
     </modules>
     <dependencies>
         <dependency>
