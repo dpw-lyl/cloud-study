@@ -18,7 +18,7 @@ public class AsyncLogService {
      * 保存系统日志记录
      */
     @Async
-    public void saveSysLog(SysOperationLog sysOperLog) {
-       // remoteLogService.saveLog(sysOperLog, SecurityConstants.INNER);
+    public void saveSysLog(SysOperationLog sysOperationLog) {
+       // remoteLogService.saveLog(sysOperationLog, SecurityConstants.INNER);
     }
 }

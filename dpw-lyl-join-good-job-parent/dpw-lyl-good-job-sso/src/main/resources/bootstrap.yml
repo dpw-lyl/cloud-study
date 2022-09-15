@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: good-job-sso
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        username: nacos
+        password: nacos
+        namespace: f8105ddd-3ef4-431f-b3ae-aa017157911a
+        timeout: 3000
+        refresh-enable: true #修改后自动加载
+        group: SSO_APPLICATION #配置组
+        prefix: ${spring.application.name}
+        file-extension: yaml #读取nacos配置文件后缀
+      discovery:
+        namespace: f8105ddd-3ef4-431f-b3ae-aa017157911a
+        server-addr: 127.0.0.1:8848

@@ -12,5 +12,8 @@
 	<name>good-job-system</name>
 	<description>技术模块学习</description>
 	<packaging>pom</packaging>
+	<modules>
+		<module>good-job-system-server</module>
+	</modules>
 
 </project>

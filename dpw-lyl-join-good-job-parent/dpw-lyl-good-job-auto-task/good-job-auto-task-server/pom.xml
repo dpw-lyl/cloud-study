@@ -12,6 +12,24 @@
 	<name>good-job-auto-task-server</name>
 	<description>自动任务服务启动</description>
 	<packaging>jar</packaging>
+	<dependencies>
+		<!--集成nacos-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.netflix.ribbon</groupId>
+					<artifactId>ribbon</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

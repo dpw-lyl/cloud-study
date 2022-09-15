@@ -21,6 +21,7 @@
         <module>dpw-lyl-good-job-iot</module>
         <module>dpw-lyl-good-job-mybatis-generator-code</module>
         <module>dpw-lyl-good-job-file</module>
+        <module>dpw-lyl-good-job-sso</module>
     </modules>
 
 
@@ -33,10 +34,10 @@
         <protobuf.version>3.21.5</protobuf.version>
         <hutool.version>5.8.6</hutool.version>
         <msgpack.version>0.6.12</msgpack.version>
-        <alibaba.cloud.version>2021.1</alibaba.cloud.version>
-        <spring.cloud.version>2020.0.1</spring.cloud.version>
+        <alibaba.cloud.version>2021.0.1.0</alibaba.cloud.version>
+        <spring.cloud.version>2021.0.3</spring.cloud.version>
         <fastjson.version>2.0.12.graal</fastjson.version>
-        <spring.boot.version>2.4.2</spring.boot.version>
+        <spring.boot.version>2.7.2</spring.boot.version>
         <mybatis-plus.version>3.4.3</mybatis-plus.version>
         <freemarker.version>2.3.31</freemarker.version>
         <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
@@ -51,6 +52,8 @@
         <minio.version>8.2.2</minio.version>
         <poi.version>4.1.2</poi.version>
         <dynamic-ds.version>3.5.2</dynamic-ds.version>
+        <alibaba.nacos.version>2.0.4</alibaba.nacos.version>
+        <alibaba.seata.version>1.5.1</alibaba.seata.version>
     </properties>
 
     <dependencyManagement>
@@ -80,6 +83,15 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- FastDFS 分布式文件系统 -->
+            <dependency>
+                <groupId>com.github.tobato</groupId>
+                <artifactId>fastdfs-client</artifactId>
+                <version>${tobato.version}</version>
+            </dependency>
+
+
 
             <!--mybatis_plus-->
             <dependency>
@@ -135,12 +147,6 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
-            <!--mysql-->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <scope>runtime</scope>
-            </dependency>
 
             <!-- 线程传递值 -->
             <dependency>
@@ -189,6 +195,71 @@
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
                 <version>${poi.version}</version>
+            </dependency>
+
+
+            <!--接口-->
+            <dependency>
+                <groupId>com.dpw.lyl.join.good.job</groupId>
+                <artifactId>foundation-swagger</artifactId>
+                <version>${job.project.verson}</version>
+            </dependency>
+            <!--日志-->
+            <dependency>
+                <groupId>com.dpw.lyl.join.good.job</groupId>
+                <artifactId>foundation-log</artifactId>
+                <version>${job.project.verson}</version>
+            </dependency>
+            <!--远程调用-->
+            <dependency>
+                <groupId>com.dpw.lyl.join.good.job</groupId>
+                <artifactId>foundation-common-api</artifactId>
+                <version>${job.project.verson}</version>
+            </dependency>
+            <!--redis-->
+            <dependency>
+                <groupId>com.dpw.lyl.join.good.job</groupId>
+                <artifactId>foundation-redis</artifactId>
+                <version>${job.project.verson}</version>
+            </dependency>
+
+            <!--权限范围-->
+            <dependency>
+                <groupId>com.dpw.lyl.join.good.job</groupId>
+                <artifactId>foundation-data-scope</artifactId>
+                <version>${job.project.verson}</version>
+            </dependency>
+            <!--多数据源-->
+            <dependency>
+                <groupId>com.dpw.lyl.join.good.job</groupId>
+                <artifactId>foundation-datasource</artifactId>
+                <version>${job.project.verson}</version>
+            </dependency>
+            <!--公共模块-->
+            <dependency>
+                <groupId>com.dpw.lyl.join.good.job</groupId>
+                <artifactId>foundation-common</artifactId>
+                <version>${job.project.verson}</version>
+            </dependency>
+            <!--安全-->
+            <dependency>
+                <groupId>com.dpw.lyl.join.good.job</groupId>
+                <artifactId>foundation-security</artifactId>
+                <version>${job.project.verson}</version>
+            </dependency>
+
+            <!-- Alibaba Nacos 配置 -->
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${alibaba.nacos.version}</version>
+            </dependency>
+
+            <!-- Alibaba Seata 配置 -->
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${alibaba.seata.version}</version>
             </dependency>
 
         </dependencies>
@@ -262,21 +333,6 @@
             <version>${msgpack.version}</version>
         </dependency>
 
-        <!--集成nacos-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.netflix.ribbon</groupId>
-                    <artifactId>ribbon</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>

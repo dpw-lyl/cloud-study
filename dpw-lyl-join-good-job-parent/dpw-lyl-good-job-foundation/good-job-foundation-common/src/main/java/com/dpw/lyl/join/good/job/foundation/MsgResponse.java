@@ -115,4 +115,19 @@ public class MsgResponse<T> {
         return msgResponse;
     }
 
+    /**
+     * @author: dengpw
+     * @createTime: 2022年09月15 17:37:09
+     * @description: 组装错误信息
+     * @param:
+     * @return: com.dpw.lyl.join.good.job.foundation.MsgResponse<T>
+     */
+    public static <T> MsgResponse<T> buildFail(String msg){
+        MsgResponse<T> msgResponse = new MsgResponse<>();
+        msgResponse.setReturnCode(ResponseCodeEnum.SYSTEM_ERROR.getReturnCode());
+        msgResponse.setReturnMsg(msg);
+        msgResponse.setData(null);
+        return msgResponse;
+    }
+
 }

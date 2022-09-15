@@ -9,7 +9,7 @@ import lombok.*;
 import java.util.Date;
 
 /**
- * 系统访问记录表 sys_logininfor
+ * 系统访问记录表 sys_SysLoginInfo
  * 
  * @author ruoyi
  */
