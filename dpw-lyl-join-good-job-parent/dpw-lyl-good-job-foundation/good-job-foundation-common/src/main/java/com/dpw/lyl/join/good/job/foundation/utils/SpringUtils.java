@@ -3,6 +3,8 @@ package com.dpw.lyl.join.good.job.foundation.utils;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
@@ -14,7 +16,7 @@ import org.springframework.stereotype.Component;
  * @Description: 获取beanUtil
  */
 @Component
-public final class SpringUtils implements ApplicationContextAware {
+public final class SpringUtils implements ApplicationContextAware, BeanFactoryPostProcessor {
 
     private static ApplicationContext applicationContext;
 
@@ -130,4 +132,10 @@ public final class SpringUtils implements ApplicationContextAware {
     }
 
 
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        if (null == SpringUtils.applicationContext) {
+            SpringUtils.applicationContext = (ApplicationContext) beanFactory;
+        }
+    }
 }

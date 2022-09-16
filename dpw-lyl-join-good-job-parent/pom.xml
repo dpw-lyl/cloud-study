@@ -55,6 +55,7 @@
         <alibaba.nacos.version>2.0.4</alibaba.nacos.version>
         <alibaba.seata.version>1.5.1</alibaba.seata.version>
         <kaptcha.version>2.3.2</kaptcha.version>
+        <tobato.version>1.27.2</tobato.version>
     </properties>
 
     <dependencyManagement>
