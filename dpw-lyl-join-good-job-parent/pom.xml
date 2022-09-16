@@ -54,6 +54,7 @@
         <dynamic-ds.version>3.5.2</dynamic-ds.version>
         <alibaba.nacos.version>2.0.4</alibaba.nacos.version>
         <alibaba.seata.version>1.5.1</alibaba.seata.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
     </properties>
 
     <dependencyManagement>
@@ -91,6 +92,13 @@
                 <version>${tobato.version}</version>
             </dependency>
 
+
+            <!-- 验证码 -->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
 
 
             <!--mybatis_plus-->

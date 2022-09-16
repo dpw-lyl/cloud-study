@@ -9,17 +9,17 @@ public class ServiceNameConstants {
     /**
      * 认证服务的serviceId
      */
-    public static final String AUTH_SERVICE = "ruoyi-auth";
+    public static final String AUTH_SERVICE = "good-job-sso";
 
     /**
      * 系统模块的serviceId
      */
-    public static final String SYSTEM_SERVICE = "ruoyi-system";
+    public static final String SYSTEM_SERVICE = "good-job-system";
 
     /**
      * 文件服务的serviceId
      */
-    public static final String FILE_SERVICE = "ruoyi-file";
+    public static final String FILE_SERVICE = "good-job-file";
 
 
     public static final String GOOD_JOB_PAY = " good-job-pay";

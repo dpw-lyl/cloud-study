@@ -47,9 +47,9 @@ public class SysOperationLogController extends BaseController {
 
     @Log(title = "操作日志", businessType = BusinessType.DELETE)
     @RequiresPermissions("system:OperationLog:remove")
-    @DeleteMapping("/{operIds}")
-    public MsgResponse remove(@PathVariable Long[] operIds) {
-        return MsgResponse.buildSuccess(OperationLogService.deleteOperationLogByIds(operIds));
+    @DeleteMapping("/{operationIds}")
+    public MsgResponse remove(@PathVariable Long[] operationIds) {
+        return MsgResponse.buildSuccess(OperationLogService.deleteOperationLogByIds(operationIds));
     }
 
     @RequiresPermissions("system:OperationLog:remove")

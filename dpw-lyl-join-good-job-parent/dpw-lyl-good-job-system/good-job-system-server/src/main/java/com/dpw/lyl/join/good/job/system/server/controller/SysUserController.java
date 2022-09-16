@@ -82,8 +82,8 @@ public class SysUserController extends BaseController {
     public MsgResponse importData(MultipartFile file, boolean updateSupport) throws Exception {
         ExcelUtil<SysUser> util = new ExcelUtil<SysUser>(SysUser.class);
         List<SysUser> userList = util.importExcel(file.getInputStream());
-        String operName = SecurityUtils.getUsername();
-        String message = userService.importUser(userList, updateSupport, operName);
+        String operationName = SecurityUtils.getUsername();
+        String message = userService.importUser(userList, updateSupport, operationName);
         return MsgResponse.buildSuccess(message);
     }
 
