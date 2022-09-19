@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
-      <h3 class="title">若依后台管理系统</h3>
+      <h3 class="title">**后台管理系统</h3>
       <el-form-item prop="username">
         <el-input
           v-model="loginForm.username"
@@ -72,8 +72,8 @@ export default {
     return {
       codeUrl: "",
       loginForm: {
-        username: "admin",
-        password: "admin123",
+        username: "",
+        password: "",
         rememberMe: false,
         code: "",
         uuid: ""
@@ -110,10 +110,10 @@ export default {
   methods: {
     getCode() {
       getCodeImg().then(res => {
-        this.data.captchaEnabled = res.data.captchaEnabled === undefined ? true : res.data.captchaEnabled;
-        if (this.data.captchaEnabled) {
-          this.codeUrl = "data:image/gif;base64," + res.img;
-          this.loginForm.uuid = res.uuid;
+        this.captchaEnabled = res.data.captchaEnabled === undefined ? true : res.data.captchaEnabled;
+        if (this.captchaEnabled) {
+          this.codeUrl = "data:image/gif;base64," + res.data.img;
+          this.loginForm.uuid = res.data.uuid;
         }
       });
     },
@@ -144,7 +144,7 @@ export default {
             this.$router.push({ path: this.redirect || "/" }).catch(()=>{});
           }).catch(() => {
             this.loading = false;
-            if (this.data.captchaEnabled) {
+            if (this.captchaEnabled) {
               this.getCode();
             }
           });

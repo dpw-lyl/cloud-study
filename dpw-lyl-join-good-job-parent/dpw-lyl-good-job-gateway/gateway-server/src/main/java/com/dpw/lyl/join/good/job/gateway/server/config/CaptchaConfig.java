@@ -17,7 +17,7 @@ import static com.google.code.kaptcha.Constants.*;
 @Configuration
 public class CaptchaConfig {
     @Bean(name = "captchaProducer")
-    public DefaultKaptcha getKaptchaBean() {
+    public DefaultKaptcha getCaptchaBean() {
         DefaultKaptcha defaultKaptcha = new DefaultKaptcha();
         Properties properties = new Properties();
         // 是否有边框 默认为true 我们可以自己设置yes，no
@@ -44,7 +44,7 @@ public class CaptchaConfig {
     }
 
     @Bean(name = "captchaProducerMath")
-    public DefaultKaptcha getKaptchaBeanMath() {
+    public DefaultKaptcha getCaptchaBeanMath() {
         DefaultKaptcha defaultKaptcha = new DefaultKaptcha();
         Properties properties = new Properties();
         // 是否有边框 默认为true 我们可以自己设置yes，no
@@ -60,9 +60,9 @@ public class CaptchaConfig {
         // 验证码文本字符大小 默认为40
         properties.setProperty(KAPTCHA_TEXTPRODUCER_FONT_SIZE, "35");
         // KAPTCHA_SESSION_KEY
-        properties.setProperty(KAPTCHA_SESSION_CONFIG_KEY, "kaptchaCodeMath");
+        properties.setProperty(KAPTCHA_SESSION_CONFIG_KEY, "captchaCodeMath");
         // 验证码文本生成器
-        properties.setProperty(KAPTCHA_TEXTPRODUCER_IMPL, "com.ruoyi.gateway.config.KaptchaTextCreator");
+        properties.setProperty(KAPTCHA_TEXTPRODUCER_IMPL, "com.dpw.lyl.join.good.job.gateway.server.config.CaptchaTextCreator");
         // 验证码文本字符间距 默认为2
         properties.setProperty(KAPTCHA_TEXTPRODUCER_CHAR_SPACE, "3");
         // 验证码文本字符长度 默认为5

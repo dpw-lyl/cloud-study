@@ -10,15 +10,14 @@ import java.io.IOException;
  *
  * @author ruoyi
  */
-public interface ValidateCodeService
-{
+public interface ValidateCodeService {
     /**
      * 生成验证码
      */
-     MsgResponse createCaptcha() throws IOException, CaptchaException;
+    MsgResponse createCaptcha() throws IOException, CaptchaException;
 
     /**
      * 校验验证码
      */
-     void checkCaptcha(String key, String value) throws CaptchaException;
+    void checkCaptcha(String key, String value) throws CaptchaException;
 }

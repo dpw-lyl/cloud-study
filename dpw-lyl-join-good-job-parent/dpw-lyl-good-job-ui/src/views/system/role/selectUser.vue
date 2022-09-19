@@ -126,8 +126,8 @@ export default {
         return;
       }
       authUserSelectAll({ roleId: roleId, userIds: userIds }).then(res => {
-        this.$modal.msgSuccess(res.msg);
-        if (res.code === 200) {
+        this.$modal.msgSuccess(res.returnMsg);
+        if (res.returnCode === 200) {
           this.visible = false;
           this.$emit("ok");
         }

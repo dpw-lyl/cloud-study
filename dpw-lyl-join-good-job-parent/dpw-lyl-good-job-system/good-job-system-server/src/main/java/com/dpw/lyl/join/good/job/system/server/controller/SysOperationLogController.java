@@ -23,12 +23,12 @@ import java.util.List;
  * @author ruoyi
  */
 @RestController
-@RequestMapping("/operation-log")
+@RequestMapping("/sysOperationLog")
 public class SysOperationLogController extends BaseController {
     @Autowired
     private ISysOperationLogService OperationLogService;
 
-    @RequiresPermissions("system:OperationLog:list")
+    @RequiresPermissions("system:operationLog:list")
     @GetMapping("/list")
     public TableDataInfo list(SysOperationLog OperationLog) {
         startPage();
@@ -37,7 +37,7 @@ public class SysOperationLogController extends BaseController {
     }
 
     @Log(title = "操作日志", businessType = BusinessType.EXPORT)
-    @RequiresPermissions("system:OperationLog:export")
+    @RequiresPermissions("system:operationLog:export")
     @PostMapping("/export")
     public void export(HttpServletResponse response, SysOperationLog OperationLog) {
         List<SysOperationLog> list = OperationLogService.selectOperationLogList(OperationLog);
@@ -46,13 +46,13 @@ public class SysOperationLogController extends BaseController {
     }
 
     @Log(title = "操作日志", businessType = BusinessType.DELETE)
-    @RequiresPermissions("system:OperationLog:remove")
+    @RequiresPermissions("system:operationLog:remove")
     @DeleteMapping("/{operationIds}")
     public MsgResponse remove(@PathVariable Long[] operationIds) {
         return MsgResponse.buildSuccess(OperationLogService.deleteOperationLogByIds(operationIds));
     }
 
-    @RequiresPermissions("system:OperationLog:remove")
+    @RequiresPermissions("system:operationLog:remove")
     @Log(title = "操作日志", businessType = BusinessType.CLEAN)
     @DeleteMapping("/clean")
     public MsgResponse clean() {

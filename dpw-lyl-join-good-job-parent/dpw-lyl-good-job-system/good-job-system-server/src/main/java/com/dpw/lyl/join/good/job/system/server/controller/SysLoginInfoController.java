@@ -24,7 +24,7 @@ import java.util.List;
  * @author ruoyi
  */
 @RestController
-@RequestMapping("/loginInfo")
+@RequestMapping("/sysLoginInfo")
 public class SysLoginInfoController extends BaseController {
     @Autowired
     private ISysLoginInfoService SysLoginInfoService;
@@ -32,7 +32,7 @@ public class SysLoginInfoController extends BaseController {
     @Autowired
     private RedisService redisService;
 
-    @RequiresPermissions("system:SysLoginInfo:list")
+    @RequiresPermissions("system:loginInfo:list")
     @GetMapping("/list")
     public TableDataInfo list(SysLoginInfo SysLoginInfo) {
         startPage();
@@ -41,7 +41,7 @@ public class SysLoginInfoController extends BaseController {
     }
 
     @Log(title = "登录日志", businessType = BusinessType.EXPORT)
-    @RequiresPermissions("system:SysLoginInfo:export")
+    @RequiresPermissions("system:loginInfo:export")
     @PostMapping("/export")
     public void export(HttpServletResponse response, SysLoginInfo SysLoginInfo) {
         List<SysLoginInfo> list = SysLoginInfoService.selectSysLoginInfoList(SysLoginInfo);
@@ -49,14 +49,14 @@ public class SysLoginInfoController extends BaseController {
         util.exportExcel(response, list, "登录日志");
     }
 
-    @RequiresPermissions("system:SysLoginInfo:remove")
+    @RequiresPermissions("system:loginInfo:remove")
     @Log(title = "登录日志", businessType = BusinessType.DELETE)
     @DeleteMapping("/{infoIds}")
     public MsgResponse remove(@PathVariable Long[] infoIds) {
         return MsgResponse.buildSuccess(SysLoginInfoService.deleteSysLoginInfoByIds(infoIds));
     }
 
-    @RequiresPermissions("system:SysLoginInfo:remove")
+    @RequiresPermissions("system:loginInfo:remove")
     @Log(title = "登录日志", businessType = BusinessType.DELETE)
     @DeleteMapping("/clean")
     public MsgResponse clean() {
@@ -64,7 +64,7 @@ public class SysLoginInfoController extends BaseController {
         return MsgResponse.buildSuccess();
     }
 
-    @RequiresPermissions("system:SysLoginInfo:unlock")
+    @RequiresPermissions("system:loginInfo:unlock")
     @Log(title = "账户解锁", businessType = BusinessType.OTHER)
     @GetMapping("/unlock/{userName}")
     public MsgResponse unlock(@PathVariable("userName") String userName) {

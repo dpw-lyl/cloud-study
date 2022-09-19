@@ -13,12 +13,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="accessTime"    column="access_time"       />
 	</resultMap>
 
-	<insert id="insertLoginInfo" parameterType="SysLoginInfo">
+	<insert id="insertSysLoginInfo" parameterType="SysLoginInfo">
 		insert into sys_LoginInfo (user_name, status, ipaddr, msg, access_time)
 		values (#{userName}, #{status}, #{ipaddr}, #{msg}, sysdate())
 	</insert>
 	
-	<select id="selectLoginInfoList" parameterType="SysLoginInfo" resultMap="SysLoginInfoResult">
+	<select id="selectSysLoginInfoList" parameterType="SysLoginInfo" resultMap="SysLoginInfoResult">
 		select info_id, user_name, ipaddr, status, msg, access_time from sys_LoginInfo
 		<where>
 			<if test="ipaddr != null and ipaddr != ''">
@@ -40,14 +40,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		order by info_id desc
 	</select>
 	
-	<delete id="deleteLoginInfoByIds" parameterType="Long">
+	<delete id="deleteSysLoginInfoByIds" parameterType="Long">
  		delete from sys_LoginInfo where info_id in
  		<foreach collection="array" item="infoId" open="(" separator="," close=")">
  			#{infoId}
         </foreach> 
  	</delete>
     
-    <update id="cleanLoginInfo">
+    <update id="cleanSysLoginInfo">
         truncate table sys_LoginInfo
     </update>
     

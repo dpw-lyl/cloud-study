@@ -19,7 +19,7 @@
     >
       <i class="el-icon-plus"></i>
     </el-upload>
-    
+
     <!-- 上传提示 -->
     <div class="el-upload__tip" slot="tip" v-if="showTip">
       请上传
@@ -149,7 +149,7 @@ export default {
     },
     // 上传成功回调
     handleUploadSuccess(res, file) {
-      if (res.code === 200) {
+      if (res.returnCode === 200) {
         this.uploadList.push({ name: res.data.url, url: res.data.url });
         this.uploadedSuccessfully();
       } else {

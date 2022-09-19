@@ -60,7 +60,7 @@
           size="mini"
           :disabled="multiple"
           @click="handleDelete"
-          v-hasPermi="['system:logininfor:remove']"
+          v-hasPermi="['system:loginInfo:remove']"
         >删除</el-button>
       </el-col>
       <el-col :span="1.5">
@@ -70,7 +70,7 @@
           icon="el-icon-delete"
           size="mini"
           @click="handleClean"
-          v-hasPermi="['system:logininfor:remove']"
+          v-hasPermi="['system:loginInfo:remove']"
         >清空</el-button>
       </el-col>
       <el-col :span="1.5">
@@ -81,7 +81,7 @@
           size="mini"
           :disabled="single"
           @click="handleUnlock"
-          v-hasPermi="['system:logininfor:unlock']"
+          v-hasPermi="['system:loginInfo:unlock']"
         >解锁</el-button>
       </el-col>
       <el-col :span="1.5">
@@ -91,7 +91,7 @@
           icon="el-icon-download"
           size="mini"
           @click="handleExport"
-          v-hasPermi="['system:logininfor:export']"
+          v-hasPermi="['system:loginInfo:export']"
         >导出</el-button>
       </el-col>
       <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
@@ -126,10 +126,10 @@
 </template>
 
 <script>
-import { list, delLogininfor, cleanLogininfor, unlockLogininfor } from "@/api/system/logininfor";
+import { list, delloginInfo, cleanloginInfo, unlockloginInfo } from "@/api/system/loginInfo";
 
 export default {
-  name: "Logininfor",
+  name: "loginInfo",
   dicts: ['sys_common_status'],
   data() {
     return {
@@ -206,7 +206,7 @@ export default {
     handleDelete(row) {
       const infoIds = row.infoId || this.ids;
       this.$modal.confirm('是否确认删除访问编号为"' + infoIds + '"的数据项？').then(function() {
-        return delLogininfor(infoIds);
+        return delLoginInfo(infoIds);
       }).then(() => {
         this.getList();
         this.$modal.msgSuccess("删除成功");
@@ -215,7 +215,7 @@ export default {
     /** 清空按钮操作 */
     handleClean() {
       this.$modal.confirm('是否确认清空所有登录日志数据项？').then(function() {
-        return cleanLogininfor();
+        return cleanLoginInfo();
       }).then(() => {
         this.getList();
         this.$modal.msgSuccess("清空成功");
@@ -225,16 +225,16 @@ export default {
     handleUnlock() {
       const username = this.selectName;
       this.$modal.confirm('是否确认解锁用户"' + username + '"数据项?').then(function() {
-        return unlockLogininfor(username);
+        return unlockLoginInfo(username);
       }).then(() => {
         this.$modal.msgSuccess("用户" + username + "解锁成功");
       }).catch(() => {});
     },
     /** 导出按钮操作 */
     handleExport() {
-      this.download('system/logininfor/export', {
+      this.download('system/loginInfo/export', {
         ...this.queryParams
-      }, `logininfor_${new Date().getTime()}.xlsx`)
+      }, `loginInfo_${new Date().getTime()}.xlsx`)
     }
   }
 };

@@ -113,10 +113,10 @@ export default {
   methods: {
     getCode() {
       getCodeImg().then(res => {
-        this.data.captchaEnabled = res.data.captchaEnabled === undefined ? true : res.data.captchaEnabled;
-        if (this.data.captchaEnabled) {
-          this.codeUrl = "data:image/gif;base64," + res.img;
-          this.registerForm.uuid = res.uuid;
+        this.captchaEnabled = res.data.captchaEnabled === undefined ? true : res.data.captchaEnabled;
+        if (this.captchaEnabled) {
+          this.codeUrl = "data:image/gif;base64," + res.data.img;
+          this.registerForm.uuid = res.data.uuid;
         }
       });
     },
@@ -134,7 +134,7 @@ export default {
             }).catch(() => {});
           }).catch(() => {
             this.loading = false;
-            if (this.data.captchaEnabled) {
+            if (this.captchaEnabled) {
               this.getCode();
             }
           })

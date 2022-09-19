@@ -22,18 +22,18 @@ spring:
         namespace: 4ad81ca6-d1a3-4caf-8c5e-8645a75d0f03
         server-addr: 127.0.0.1:8848
 
-      sentinel:
-        # 取消控制台懒加载
-        eager: true
-        transport:
-          # 控制台地址
-          dashboard: 127.0.0.1:8718
-        # nacos配置持久化
-        datasource:
-          ds1:
-            nacos:
-              server-addr: 127.0.0.1:8848
-              dataId: sentinel-good-job-gateway
-              groupId: SENTINEL_GOOD_JOB_GATEWAY
-              data-type: json
-              rule-type: flow
+    sentinel:
+      # 取消控制台懒加载
+      eager: true
+      transport:
+        # 控制台地址
+        dashboard: 127.0.0.1:8718
+      # nacos配置持久化
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 127.0.0.1:8848
+            dataId: sentinel-good-job-gateway
+            groupId: SENTINEL_GOOD_JOB_GATEWAY
+            data-type: json
+            rule-type: flow

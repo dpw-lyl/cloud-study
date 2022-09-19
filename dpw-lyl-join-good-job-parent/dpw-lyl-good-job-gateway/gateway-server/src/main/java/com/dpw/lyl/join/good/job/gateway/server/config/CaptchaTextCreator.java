@@ -9,7 +9,7 @@ import java.util.Random;
  *
  * @author ruoyi
  */
-public class KaptchaTextCreator extends DefaultTextCreator {
+public class CaptchaTextCreator extends DefaultTextCreator {
     private static final String[] CNUMBERS = "0,1,2,3,4,5,6,7,8,9,10".split(",");
 
     @Override

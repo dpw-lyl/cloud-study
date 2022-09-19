@@ -48,14 +48,16 @@ export function logout() {
   })
 }
 
+
+
 // 获取验证码
 export function getCodeImg() {
   return request({
-    url: '/code',
+    url: '/pictureVerificationCode',
     headers: {
       isToken: false
     },
     method: 'get',
-    timeout: 20000
+    // timeout: 20000
   })
 }

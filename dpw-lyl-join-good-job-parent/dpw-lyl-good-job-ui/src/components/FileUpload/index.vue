@@ -151,13 +151,13 @@ export default {
     },
     // 上传成功回调
     handleUploadSuccess(res, file) {
-      if (res.code === 200) {
+      if (res.returnCode === 200) {
         this.uploadList.push({ name: res.data.url, url: res.data.url });
         this.uploadedSuccessfully();
       } else {
         this.number--;
         this.$modal.closeLoading();
-        this.$modal.msgError(res.msg);
+        this.$modal.msgError(res.returnMsg);
         this.$refs.fileUpload.handleRemove(file);
         this.uploadedSuccessfully();
       }
