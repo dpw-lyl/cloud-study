@@ -5,8 +5,14 @@ good-job-openapi 8805
 good-job-auto-task 8806
 good-job-monitor 8807
 good-job-gateway-admin 8808
+good-job-sso 8809
+good-job-system 8810
 
 
 1.学习笔记
    Spring Webflux（待学习）
    Spring RouterFunction（待学习）
+2.nocas服务端版本2.1.1
+3.redis版本5+
+4.mysql版本5+
+
