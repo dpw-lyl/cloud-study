@@ -329,6 +329,12 @@
             <optional>true</optional>
         </dependency>
 
+        <!--全局配置，避免bootstrap.yml文件失效-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
