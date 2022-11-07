@@ -10,6 +10,7 @@ import com.dpw.lyl.join.good.job.foundation.security.utils.SecurityUtils;
 import com.dpw.lyl.join.good.job.foundation.utils.ServletUtils;
 import com.dpw.lyl.join.good.job.foundation.utils.StringUtils;
 import com.dpw.lyl.join.good.job.foundation.utils.ip.IpUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -33,9 +34,9 @@ import java.util.Map;
  * @author ruoyi
  */
 @Aspect
+@Slf4j
 @Component
 public class LogAspect {
-    private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
 
     /**
      * 排除敏感属性字段
