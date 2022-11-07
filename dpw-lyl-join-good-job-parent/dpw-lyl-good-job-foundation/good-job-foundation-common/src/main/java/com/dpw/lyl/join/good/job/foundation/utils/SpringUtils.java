@@ -45,8 +45,10 @@ public final class SpringUtils implements ApplicationContextAware, BeanFactoryPo
      * @param: name - [String]
      * @return: java.lang.Object
      */
-    public static Object getBean(String name) {
-        return getApplicationContext().getBean(name);
+
+
+    public static <T> T getBean(String name) throws BeansException {
+        return (T) getApplicationContext().getBean(name);
     }
 
     /**
