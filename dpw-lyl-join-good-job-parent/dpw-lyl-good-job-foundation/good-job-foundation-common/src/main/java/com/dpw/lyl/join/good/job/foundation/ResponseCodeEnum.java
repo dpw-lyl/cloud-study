@@ -14,7 +14,7 @@ import lombok.Getter;
 public enum ResponseCodeEnum {
 
     SYSTEM_ERROR("999999", "系统错误"),
-    SYSTEM_SUCCESS("000000", "请求成功");;
+    SYSTEM_SUCCESS("000000", "请求成功"), LOGIN_OUT_EXP("9900", "登录超时");;
 
     /**
      * 定义错误码值

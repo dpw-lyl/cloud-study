@@ -3,6 +3,7 @@ package com.dpw.lyl.join.good.job.foundation.security.service;
 import com.dpw.lyl.join.good.job.foundation.constant.CacheConstants;
 import com.dpw.lyl.join.good.job.foundation.constant.SecurityConstants;
 import com.dpw.lyl.join.good.job.foundation.domain.login.LoginUser;
+import com.dpw.lyl.join.good.job.foundation.domain.login.MemberLoginUser;
 import com.dpw.lyl.join.good.job.foundation.redis.service.RedisService;
 import com.dpw.lyl.join.good.job.foundation.utils.JwtUtils;
 import com.dpw.lyl.join.good.job.foundation.utils.ServletUtils;
@@ -12,6 +13,8 @@ import com.dpw.lyl.join.good.job.foundation.utils.uuid.IdUtils;
 import com.dpw.lyl.join.good.job.foundation.security.utils.SecurityUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -150,5 +153,16 @@ public class TokenService {
 
     private String getTokenKey(String token) {
         return ACCESS_TOKEN + token;
+    }
+
+
+    public MemberLoginUser saveMemberLoginUser(HttpServletRequest request, Authentication authentication, OAuth2AccessToken oAuth2AccessToken, String clientId) {
+
+        // TODO: 2022/11/7 保存会话信息
+        return null;
+    }
+
+    public void saveLoginUser(HttpServletRequest request, String value, String clientId) {
+
     }
 }
