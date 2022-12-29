@@ -56,6 +56,7 @@
         <alibaba.seata.version>1.5.1</alibaba.seata.version>
         <kaptcha.version>2.3.2</kaptcha.version>
         <tobato.version>1.27.2</tobato.version>
+        <bean.searcher.version>3.8.2</bean.searcher.version>
     </properties>
 
     <dependencyManagement>
@@ -318,6 +319,14 @@
                 <artifactId>msgpack</artifactId>
                 <version>${msgpack.version}</version>
             </dependency>
+
+            <!-- SpringBoot / Grails 的项目直接使用以下依赖，更为方便（只添加这一个依赖即可） -->
+            <dependency>
+                <groupId>com.ejlchina</groupId>
+                <artifactId>bean-searcher-boot-starter</artifactId>
+                <version>${bean.searcher.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
