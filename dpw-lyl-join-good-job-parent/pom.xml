@@ -57,6 +57,7 @@
         <kaptcha.version>2.3.2</kaptcha.version>
         <tobato.version>1.27.2</tobato.version>
         <bean.searcher.version>3.8.2</bean.searcher.version>
+        <jsoup.version>1.15.3</jsoup.version>
     </properties>
 
     <dependencyManagement>
@@ -327,6 +328,14 @@
                 <version>${bean.searcher.version}</version>
             </dependency>
 
+
+            <!-- 网页解析爬虫-->
+            <dependency>
+                <!-- jsoup HTML parser library @ https://jsoup.org/ -->
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
