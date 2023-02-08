@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>dpw-lyl-join-good-job-parent</artifactId>
+		<groupId>com.dpw.lyl.join.good.job</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>mybatis-generator-code</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>dpw-lyl-good-job-mybatis-generator-code</name>
+	<description>代码生成器</description>
+
+	<dependencies>
+		<!--生成器依赖-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-generator</artifactId>
+		</dependency>
+		<!--MyBatis-Plus 从 3.0.3 之后移除了代码生成器与模板引擎的默认依赖，需要手动添加相关依赖：-->
+		<!--添加 模板引擎 依赖，MyBatis-Plus 支持 Velocity（默认）、
+        Freemarker、Beetl，用户可以选择自己熟悉的模板引擎，
+        如果都不满足您的要求，可以采用自定义模板引擎。-->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

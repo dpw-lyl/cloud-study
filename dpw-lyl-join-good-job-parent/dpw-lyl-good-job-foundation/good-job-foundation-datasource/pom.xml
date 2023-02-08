@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>dpw-lyl-good-job-foundation</artifactId>
+		<groupId>com.dpw.lyl.join.good.job</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>foundation-datasource</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>good-job-foundation-datasource</name>
+	<description>Demo project for Spring Boot</description>
+
+	<dependencies>
+
+		<!-- Druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>${alibaba.druid.version}</version>
+		</dependency>
+
+		<!-- Dynamic DataSource -->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+			<version>${dynamic-ds.version}</version>
+		</dependency>
+
+		<!-- SpringBoot Seata -->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+		</dependency>
+
+	</dependencies>
+</project>
