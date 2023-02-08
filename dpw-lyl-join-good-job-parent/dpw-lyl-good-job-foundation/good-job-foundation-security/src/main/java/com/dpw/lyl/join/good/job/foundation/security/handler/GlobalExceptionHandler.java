@@ -10,8 +10,6 @@ import com.dpw.lyl.join.good.job.foundation.exception.auth.NotPermissionExceptio
 import com.dpw.lyl.join.good.job.foundation.exception.auth.NotRoleException;
 import com.dpw.lyl.join.good.job.foundation.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
