@@ -1,7 +1,7 @@
 package com.dpw.lyl.join.good.job.iot.web.netty.handler;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dpw.lyl.join.good.job.iot.web.netty.constant.NettyCodeEnum;
+import com.dpw.lyl.join.good.job.iot.web.netty.handler.constant.NettyCodeEnum;
 import com.dpw.lyl.join.good.job.iot.web.netty.handler.base.NettyServerBaseHandler;
 import com.dpw.lyl.join.good.job.iot.web.netty.template.NettyServerTemplate;
 import io.netty.channel.ChannelHandler;

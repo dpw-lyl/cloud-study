@@ -1,12 +1,19 @@
-package com.dpw.lyl.join.good.job.iot.web.netty.handler;
+package com.dpw.lyl.join.good.job.iot.redis.netty.handler;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dpw.lyl.join.good.job.iot.web.netty.handler.constant.NettyCodeEnum;
-import com.dpw.lyl.join.good.job.iot.web.netty.handler.base.NettyClientBaseHandler;
-import com.dpw.lyl.join.good.job.iot.web.netty.template.NettyClientTemplate;
+import com.octv.cloud.common.redis.service.RedisService;
+import com.octv.cloud.tour.travel.netty.constant.NettyCodeEnum;
+import com.octv.cloud.tour.travel.netty.handler.base.NettyClientBaseHandler;
+import com.octv.cloud.tour.travel.netty.pool.ChannelHandlerPool;
+import com.octv.cloud.tour.travel.netty.service.CommMessageService;
+import com.octv.cloud.tour.travel.netty.template.NettyClientTemplate;
+import com.octv.cloud.tour.travel.utils.SocketTokenUtil;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -20,10 +27,18 @@ import javax.annotation.Resource;
 @Slf4j
 @Component
 @ChannelHandler.Sharable
+@RequiredArgsConstructor
+@Order(1)
 public class NettyClientHandler extends NettyClientBaseHandler {
 
     @Resource
     private NettyClientTemplate nettyClientTemplate;
+
+    private final CommMessageService commMessageService;
+
+    private final RedisService redisService;
+
+    private final SocketTokenUtil socketTokenUtil;
 
     /**
      * @author: dengpw
@@ -36,7 +51,7 @@ public class NettyClientHandler extends NettyClientBaseHandler {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
         log.info("客戶端与服务端链接成功，客户端ChannelId={}，当前线程：{}", ctx.channel().id(), Thread.currentThread());
-        nettyClientTemplate.saveClientChannel(ctx.channel());
+        ChannelHandlerPool.channelGroup.add(ctx.channel());
     }
 
     /**
@@ -52,23 +67,11 @@ public class NettyClientHandler extends NettyClientBaseHandler {
      */
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
-        log.info("客户端ChannelId={}"+ctx.channel().remoteAddress() + " 服务器返回的数据 ：{}，",ctx.channel().id().asLongText(),msg);
-        //心跳检测逻辑
-        JSONObject heartJson = JSONObject.parseObject(msg.toString());
-        String nettyCode = heartJson.getString("nettyCode");
-        if (NettyCodeEnum.NETTY_SERVER_HEART_MSG_CLOSE.getNettyCode().equals(nettyCode)) {
-            //服务端存活正常处理业务
-            log.info("接收服务端消息data：{}", msg);
-            // TODO: 2022/8/23 业务逻辑
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("returnCode", "000000");
-            jsonObject.put("returnMsg", "接收成功");
-            ctx.channel().writeAndFlush(jsonObject.toJSONString());
-        } else {
-          //服务端关闭链接了
-            // TODO: 2022/8/24 处理控制 通过反射实现具体逻辑
-        }
-        // ReferenceCountUtil.retain(msg);
+        log.info("客户端ChannelId={}" + ctx.channel().remoteAddress() + " 服务器返回的数据 ：{}，", ctx.channel().id().asLongText(), msg);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("code", NettyCodeEnum.NETTY_CLIENT_HEART_MSG_CLOSE.getNettyCode());
+        jsonObject.put("data", NettyCodeEnum.NETTY_CLIENT_HEART_MSG_CLOSE.getNettyMsg());
+        ctx.channel().writeAndFlush(new TextWebSocketFrame(jsonObject.toJSONString()));
     }
 
     /**
@@ -81,11 +84,13 @@ public class NettyClientHandler extends NettyClientBaseHandler {
      */
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        log.info("开始关闭通道，客户端ChannelId={},通道异常原因{}, " ,ctx.channel().id().asLongText(), cause.toString());
+        log.info("开始关闭通道，客户端ChannelId={},通道异常原因{}, ", ctx.channel().id().asLongText(), cause.toString());
         //如果出现异常, 就关闭该通道
         ctx.close();
-        nettyClientTemplate.deleteClientChannel(ctx.channel());
-        log.info("关闭通道结束，客户端ChannelId={},通道异常原因{}, " ,ctx.channel().id().asLongText(), cause.toString());
+        ChannelHandlerPool.channelGroup.remove(ctx.channel());
+        nettyClientTemplate.deleteServerChannel(redisService.getCacheObject(ctx.channel().id().asLongText()));
+        redisService.deleteObject(ctx.channel().id().asLongText());
+        log.info("关闭通道结束，客户端ChannelId={},通道异常原因{}, ", ctx.channel().id().asLongText(), cause.toString());
     }
 
     /**
@@ -97,7 +102,16 @@ public class NettyClientHandler extends NettyClientBaseHandler {
      */
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
-        nettyClientTemplate.deleteClientChannel(ctx.channel());
+
+        log.info("链接已关闭，ChanelId={}", ctx.channel().id().asLongText());
+        // 删除全局上下文
+        //  清空异常的Channel
+        ChannelHandlerPool.channelGroup.remove(ctx.channel());
+        Object cacheObject = redisService.getCacheObject(ctx.channel().id().asLongText());
+        if (cacheObject instanceof String) {
+            nettyClientTemplate.deleteServerChannel((String) cacheObject);
+        }
+        redisService.deleteObject(ctx.channel().id().asLongText());
     }
 
 }

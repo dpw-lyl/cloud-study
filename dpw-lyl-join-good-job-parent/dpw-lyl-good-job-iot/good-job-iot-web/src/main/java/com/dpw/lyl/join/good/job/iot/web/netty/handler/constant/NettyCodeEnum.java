@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.iot.web.netty.constant;
+package com.dpw.lyl.join.good.job.iot.web.netty.handler.constant;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
