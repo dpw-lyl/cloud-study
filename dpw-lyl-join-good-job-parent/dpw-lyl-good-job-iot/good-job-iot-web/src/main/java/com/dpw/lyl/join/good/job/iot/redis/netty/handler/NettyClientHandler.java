@@ -1,13 +1,12 @@
 package com.dpw.lyl.join.good.job.iot.redis.netty.handler;
 
 import com.alibaba.fastjson.JSONObject;
-import com.octv.cloud.common.redis.service.RedisService;
-import com.octv.cloud.tour.travel.netty.constant.NettyCodeEnum;
-import com.octv.cloud.tour.travel.netty.handler.base.NettyClientBaseHandler;
-import com.octv.cloud.tour.travel.netty.pool.ChannelHandlerPool;
-import com.octv.cloud.tour.travel.netty.service.CommMessageService;
-import com.octv.cloud.tour.travel.netty.template.NettyClientTemplate;
-import com.octv.cloud.tour.travel.utils.SocketTokenUtil;
+import com.dpw.lyl.join.good.job.foundation.redis.service.RedisService;
+import com.dpw.lyl.join.good.job.iot.redis.netty.constant.NettyCodeEnum;
+import com.dpw.lyl.join.good.job.iot.redis.netty.handler.base.NettyClientBaseHandler;
+import com.dpw.lyl.join.good.job.iot.redis.netty.pool.ChannelHandlerPool;
+import com.dpw.lyl.join.good.job.iot.redis.netty.service.CommMessageService;
+import com.dpw.lyl.join.good.job.iot.redis.netty.template.NettyClientTemplate;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
@@ -38,7 +37,7 @@ public class NettyClientHandler extends NettyClientBaseHandler {
 
     private final RedisService redisService;
 
-    private final SocketTokenUtil socketTokenUtil;
+
 
     /**
      * @author: dengpw

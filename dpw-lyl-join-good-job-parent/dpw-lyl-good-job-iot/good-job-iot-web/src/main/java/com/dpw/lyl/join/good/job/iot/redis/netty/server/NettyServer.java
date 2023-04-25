@@ -1,6 +1,7 @@
 package com.dpw.lyl.join.good.job.iot.redis.netty.server;
 
-import com.octv.cloud.tour.travel.netty.handler.NettyServerChannelInitializer;
+
+import com.dpw.lyl.join.good.job.iot.redis.netty.handler.NettyServerChannelInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;
@@ -10,12 +11,10 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 import java.net.InetSocketAddress;

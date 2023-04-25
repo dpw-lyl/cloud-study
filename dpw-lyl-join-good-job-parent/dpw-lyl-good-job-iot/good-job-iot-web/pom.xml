@@ -112,6 +112,11 @@
 			<artifactId>fastjson</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.dpw.lyl.join.good.job</groupId>
+			<artifactId>foundation-redis</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

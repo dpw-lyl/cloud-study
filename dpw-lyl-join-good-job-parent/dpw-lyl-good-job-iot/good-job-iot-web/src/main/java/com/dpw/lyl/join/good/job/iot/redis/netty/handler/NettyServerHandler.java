@@ -1,20 +1,14 @@
 package com.dpw.lyl.join.good.job.iot.redis.netty.handler;
 
 import com.alibaba.fastjson.JSONObject;
-import com.octv.cloud.common.core.domain.R;
-import com.octv.cloud.common.core.utils.JwtUtils;
-import com.octv.cloud.common.core.utils.SpringUtils;
-import com.octv.cloud.common.core.utils.StringUtils;
-import com.octv.cloud.common.redis.service.RedisService;
-import com.octv.cloud.common.security.service.TokenService;
-import com.octv.cloud.common.security.utils.TokenUtils;
-import com.octv.cloud.tour.travel.netty.handler.base.NettyServerBaseHandler;
-import com.octv.cloud.tour.travel.netty.message.WebSocketHeader;
-import com.octv.cloud.tour.travel.netty.pool.ChannelHandlerPool;
-import com.octv.cloud.tour.travel.netty.service.CommMessageService;
-import com.octv.cloud.tour.travel.netty.template.NettyServerTemplate;
-import com.octv.cloud.tour.travel.utils.SocketTokenUtil;
-import io.jsonwebtoken.Claims;
+import com.dpw.lyl.join.good.job.foundation.MsgResponse;
+import com.dpw.lyl.join.good.job.foundation.redis.service.RedisService;
+import com.dpw.lyl.join.good.job.foundation.utils.StringUtils;
+import com.dpw.lyl.join.good.job.iot.redis.netty.handler.base.NettyServerBaseHandler;
+import com.dpw.lyl.join.good.job.iot.redis.netty.message.WebSocketHeader;
+import com.dpw.lyl.join.good.job.iot.redis.netty.pool.ChannelHandlerPool;
+import com.dpw.lyl.join.good.job.iot.redis.netty.service.CommMessageService;
+import com.dpw.lyl.join.good.job.iot.redis.netty.template.NettyServerTemplate;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.FullHttpRequest;
@@ -44,7 +38,6 @@ public class NettyServerHandler extends NettyServerBaseHandler {
 
     private final RedisService redisService;
 
-    private final SocketTokenUtil socketTokenUtil;
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
@@ -63,12 +56,11 @@ public class NettyServerHandler extends NettyServerBaseHandler {
             String token = webSocketPermissionVerify.getToken();
             String userId = webSocketPermissionVerify.getUserId();
             if(StringUtils.isEmpty(token)){
-                ctx.channel().writeAndFlush(new TextWebSocketFrame(JSONObject.toJSONString(R.fail("token为空"))));
+                ctx.channel().writeAndFlush(new TextWebSocketFrame(JSONObject.toJSONString(MsgResponse.buildFail("token为空"))));
             }
+            // TODO: 2023/4/25
             //第一次连接鉴权
-            if(!socketTokenUtil.checkToken(token,userId)){
-                ctx.channel().writeAndFlush(new TextWebSocketFrame(JSONObject.toJSONString(R.fail("未登录或者登陆失效"))));
-            }
+
         }else if(msg instanceof TextWebSocketFrame) {
             // 业务处理
             AttributeKey<WebSocketHeader> key = AttributeKey.valueOf("permission");
@@ -85,7 +77,7 @@ public class NettyServerHandler extends NettyServerBaseHandler {
            // SpringUtils.getBean(req.getString("eventType"));
             // TODO: 2023/3/14 前端主动抓取数据
             log.info("接收数据：{}",req);
-            ctx.channel().writeAndFlush(new TextWebSocketFrame(JSONObject.toJSONString(R.ok(null))));
+            ctx.channel().writeAndFlush(new TextWebSocketFrame(JSONObject.toJSONString(MsgResponse.buildSuccess(null))));
         }
     }
 

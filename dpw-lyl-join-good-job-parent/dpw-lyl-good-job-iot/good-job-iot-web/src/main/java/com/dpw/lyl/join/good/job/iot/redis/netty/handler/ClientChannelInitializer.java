@@ -1,8 +1,8 @@
 package com.dpw.lyl.join.good.job.iot.redis.netty.handler;
 
 import cn.hutool.core.collection.CollectionUtil;
-import com.octv.cloud.tour.travel.config.NettyHeartBeat;
-import com.octv.cloud.tour.travel.netty.handler.base.NettyClientBaseHandler;
+import com.dpw.lyl.join.good.job.iot.redis.netty.handler.base.NettyClientBaseHandler;
+import com.dpw.lyl.join.good.job.iot.web.config.NettyHeartBeat;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.bytes.ByteArrayDecoder;

@@ -1,8 +1,8 @@
 package com.dpw.lyl.join.good.job.iot.redis.netty.template;
 
-import com.octv.cloud.common.redis.service.RedisService;
-import com.octv.cloud.tour.travel.netty.constant.NettyEventType;
-import com.octv.cloud.tour.travel.netty.pool.ChannelHandlerPool;
+
+import com.dpw.lyl.join.good.job.foundation.redis.service.RedisService;
+import com.dpw.lyl.join.good.job.iot.redis.netty.pool.ChannelHandlerPool;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelId;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
