@@ -22,6 +22,7 @@
         <module>dpw-lyl-good-job-mybatis-generator-code</module>
         <module>dpw-lyl-good-job-file</module>
         <module>dpw-lyl-good-job-sso</module>
+        <module>dpw-lyl-good-job-algorithm</module>
     </modules>
 
 
