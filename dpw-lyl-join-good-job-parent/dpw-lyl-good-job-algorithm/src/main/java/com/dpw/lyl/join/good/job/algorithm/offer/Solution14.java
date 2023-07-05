@@ -16,7 +16,7 @@ public class Solution14 {
 
 
     public static void main(String[] args) {
-        System.out.println(new Solution14().checkInclusion("oo", "eidbaooo"));
+        System.out.println(new Solution14().checkInclusion("fgo", "eidbaooogf"));
     }
 
 
@@ -37,7 +37,6 @@ public class Solution14 {
             int p = s2.charAt(i) - 'a';
             ++as[p];
             while (as[p] > 0) {
-
                 --as[s2.charAt(a) - 'a'];
                 a++;
             }
