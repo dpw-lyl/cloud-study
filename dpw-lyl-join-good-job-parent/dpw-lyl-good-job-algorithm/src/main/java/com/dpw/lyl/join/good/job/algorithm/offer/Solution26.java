@@ -1,5 +1,7 @@
 package com.dpw.lyl.join.good.job.algorithm.offer;
 
+import java.util.*;
+
 /**
  * @Author: dengpw
  * @createTime: 2023年06月27日 09:16:22
@@ -58,13 +60,105 @@ public class Solution26 {
             temp = temp.next;
             index3++;
         }
-        new Solution26().reorderList(l2);
+        new Solution26().reorderListCenter(l2);
+
         System.out.println(l2);
     }
 
+    /**
+     * @author: dengpw
+     * @createTime: 2023年07月05 17:37:39
+     * @description: 使用list下标，交换node,空间复杂O(n) 时间复杂O(n)
+     * @param: head - [ListNode]
+     * @return: void
+     */
 
     public void reorderList(ListNode head) {
+        if (null == head) {
+            return;
+        }
+        ListNode temp = head;
+        List<ListNode> listNodes = new ArrayList<>();
+        //集合存储，记录下标
+        while (temp != null) {
+            listNodes.add(temp);
+            temp = temp.next;
+        }
+        int left = 0, right = listNodes.size() - 1;
+        while (left<right){
+            listNodes.get(left).next = listNodes.get(right);
+            left ++ ;
+            if(left  ==  right){
+                //左右两个指针相遇交换完成
+                break;
+            }
 
+            listNodes.get(right).next=listNodes.get(left);
+            right--;
+        }
+        listNodes.get(right).next=null;
+
+    }
+
+    /**
+     * @author: dengpw
+     * @createTime: 2023年07月05 17:36:38
+     * @description: 空间复杂O(1) 时间复杂O(n)
+     * @param: head - [ListNode]
+     * @return: void
+     */
+    public void reorderListCenter(ListNode head) {
+        if(null == head){
+            return;
+        }
+        ListNode midNode = getMidNode(head);
+        ListNode node1=head;
+        ListNode node2=midNode.next;
+        midNode.next=null;
+        node2 = reverse(node2);
+        mergeNodes(node1,node2);
+
+    }
+
+
+    public void mergeNodes(ListNode node1,ListNode node2) {
+        ListNode temp1 = node1;
+        ListNode temp2 = node2;
+        while ( temp1 != null && temp2 != null){
+           temp1=node1.next;
+           node1.next=node2;
+           node1=temp1;
+
+           temp2=node2.next;
+           node2.next=node1;
+           node2=temp2;
+        }
+
+
+    }
+
+
+    private ListNode getMidNode(ListNode head){
+        ListNode slow=head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+
+    }
+
+    private ListNode reverse(ListNode node){
+        ListNode prev=null;
+        ListNode current=node;
+        while (current != null){
+            ListNode next = current.next;
+            current.next=prev;
+            prev=current;
+            current=next;
+        }
+        return prev;
     }
 
 
