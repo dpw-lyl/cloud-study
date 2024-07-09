@@ -23,6 +23,9 @@
         <module>dpw-lyl-good-job-file</module>
         <module>dpw-lyl-good-job-sso</module>
         <module>dpw-lyl-good-job-algorithm</module>
+        <module>dpw-lyl-good-job-interview</module>
+        <module>dpw-lyl-good-job-im</module>
+        <module>dpw-lyl-good-job-big-data</module>
     </modules>
 
 
@@ -59,6 +62,8 @@
         <tobato.version>1.27.2</tobato.version>
         <bean.searcher.version>3.8.2</bean.searcher.version>
         <jsoup.version>1.15.3</jsoup.version>
+        <rocket.mq.version>2.2.3</rocket.mq.version>
+        <guava.version>30.1-jre</guava.version>
     </properties>
 
     <dependencyManagement>
@@ -71,6 +76,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}}</version> <!-- 使用你项目适用的Guava版本 -->
+            </dependency>
+
 
             <!--alibaba-cloud版本管理-->
             <dependency>
@@ -96,6 +108,11 @@
                 <version>${tobato.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocket.mq.version}</version>
+            </dependency>
 
             <!-- 验证码 -->
             <dependency>

@@ -1,0 +1,7 @@
+spark:
+   master: local[4]
+   app:
+     name: BigDataProcessingExample
+hdfs:
+   input:
+      path: hdfs://localhost:9000/data/input

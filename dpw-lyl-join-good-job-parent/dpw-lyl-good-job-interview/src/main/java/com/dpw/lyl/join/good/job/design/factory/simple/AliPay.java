@@ -1,0 +1,16 @@
+package com.dpw.lyl.join.good.job.design.factory.simple;
+
+import com.dpw.lyl.join.good.job.foundation.MsgResponse;
+
+/**
+ * @description: 支付宝
+ * @author: dengpw$
+ * @create: 2023-09-04 15:21
+ * @version: 1.0.0$
+ **/
+public class AliPay implements OpenPay {
+    @Override
+    public MsgResponse<Object> pay(OnlinePay onlinePay) {
+        return null;
+    }
+}

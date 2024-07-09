@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
  * @Description: 测试netty客户端
  */
 @Slf4j
-@Component
+@Component("localNettyClient")
 @DependsOn("nettyServer")
 public class NettyClient {
 

@@ -12,6 +12,18 @@
 	<name>auto-task-service</name>
 	<description>自动任务业务支持</description>
 	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.rocketmq</groupId>
+			<artifactId>rocketmq-spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.dpw.lyl.join.good.job</groupId>
+			<artifactId>auto-task-entity</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

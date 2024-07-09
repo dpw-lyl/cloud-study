@@ -11,6 +11,7 @@ import com.dpw.lyl.join.good.job.system.server.mapper.SysConfigMapper;
 import com.dpw.lyl.join.good.job.system.server.service.ISysConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 import java.util.Collection;
@@ -57,6 +58,7 @@ public class SysConfigServiceImpl implements ISysConfigService {
      * @return 参数键值
      */
     @Override
+    @Transactional
     public String selectConfigByKey(String configKey) {
         String configValue = Convert.toStr(redisService.getCacheObject(getCacheKey(configKey)));
         if (StringUtils.isNotEmpty(configValue)) {

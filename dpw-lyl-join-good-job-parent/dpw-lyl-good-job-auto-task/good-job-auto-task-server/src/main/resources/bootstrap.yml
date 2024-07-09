@@ -5,19 +5,23 @@ spring:
     active: dev
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
+      server-addr: nacos.dpw2lyl.com
       config:
         username: nacos
         password: nacos
-        namespace: 4ad81ca6-d1a3-4caf-8c5e-8645a75d0f03
+        namespace: afaab4c5-d709-465d-8538-70f14b72ce4e
         timeout: 3000
         refresh-enable: true #修改后自动加载
-        group: AUTO_TASK_APPLICATION #配置组
+        group: DEFAULT_GROUP        #配置组
         prefix: ${spring.application.name}
         file-extension: yaml #读取nacos配置文件后缀
         # 共享配置
         shared-configs:
            - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
       discovery:
-        namespace: 4ad81ca6-d1a3-4caf-8c5e-8645a75d0f03
-        server-addr: 127.0.0.1:8848
+        server-addr: nacos.dpw2lyl.com
+        namespace: afaab4c5-d709-465d-8538-70f14b72ce4e
+        group: DEFAULT_GROUP  #配置组
+        heart-beat-interval: 1000
+        heart-beat-timeout: 1000
+

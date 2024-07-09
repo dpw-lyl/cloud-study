@@ -1,13 +1,11 @@
-server:
-  port: 8804
 spring:
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
+      server-addr: nacos.dpw2lyl.com
       config:
         username: nacos
         password: nacos
-        namespace: 4ad81ca6-d1a3-4caf-8c5e-8645a75d0f03
+        namespace: afaab4c5-d709-465d-8538-70f14b72ce4e
         timeout: 3000
         refresh-enable: true #修改后自动加载
         group: IOT_APPLICATION #配置组
@@ -17,5 +15,5 @@ spring:
         shared-configs:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
       discovery:
-        namespace: 4ad81ca6-d1a3-4caf-8c5e-8645a75d0f03
+        namespace: afaab4c5-d709-465d-8538-70f14b72ce4e
         group: IOT_APPLICATION

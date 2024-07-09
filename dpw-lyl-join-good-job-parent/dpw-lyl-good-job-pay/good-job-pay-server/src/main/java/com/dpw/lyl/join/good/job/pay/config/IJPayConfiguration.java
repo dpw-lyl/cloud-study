@@ -14,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,25 +41,10 @@ public class IJPayConfiguration extends WebMvcConfigurationSupport {
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         super.configureMessageConverters(converters);
-
         FastJsonHttpMessageConverter converter = new FastJsonHttpMessageConverter();
-        FastJsonConfig config = new FastJsonConfig();
-        config.setSerializerFeatures(
-
-                SerializerFeature.WriteMapNullValue, // 保留map空的字段
-
-                SerializerFeature.WriteNullStringAsEmpty, // 将String类型的null转成""
-
-                SerializerFeature.WriteNullNumberAsZero, // 将Number类型的null转成0
-
-                SerializerFeature.WriteNullListAsEmpty, // 将List类型的null转成[]
-
-                SerializerFeature.WriteNullBooleanAsFalse, // 将Boolean类型的null转成false
-
-                SerializerFeature.DisableCircularReferenceDetect);// 避免循环引用
-
+        FastJsonConfig config = getFastJsonConfig();
         converter.setFastJsonConfig(config);
-        converter.setDefaultCharset(Charset.forName("UTF-8"));
+        converter.setDefaultCharset(StandardCharsets.UTF_8);
         List<MediaType> mediaTypeList = new ArrayList<>();
         // 解决中文乱码问题，相当于在Controller上的@RequestMapping中加了个属性produces = "application/json"
         mediaTypeList.add(MediaType.APPLICATION_JSON);
@@ -68,8 +54,20 @@ public class IJPayConfiguration extends WebMvcConfigurationSupport {
         converters.add(responseBodyConverter());
     }
 
+    private static FastJsonConfig getFastJsonConfig() {
+        FastJsonConfig config = new FastJsonConfig();
+        config.setSerializerFeatures(
+                SerializerFeature.WriteMapNullValue, // 保留map空的字段
+                SerializerFeature.WriteNullStringAsEmpty, // 将String类型的null转成""
+                SerializerFeature.WriteNullNumberAsZero, // 将Number类型的null转成0
+                SerializerFeature.WriteNullListAsEmpty, // 将List类型的null转成[]
+                SerializerFeature.WriteNullBooleanAsFalse, // 将Boolean类型的null转成false
+                SerializerFeature.DisableCircularReferenceDetect);// 避免循环引用
+        return config;
+    }
+
     @Bean
     public HttpMessageConverter<String> responseBodyConverter() {
-        return new StringHttpMessageConverter(Charset.forName("UTF-8"));
+        return new StringHttpMessageConverter(StandardCharsets.UTF_8);
     }
 }

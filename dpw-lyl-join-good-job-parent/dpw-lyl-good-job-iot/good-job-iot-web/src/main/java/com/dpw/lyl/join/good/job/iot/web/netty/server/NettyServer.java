@@ -25,7 +25,7 @@ import java.net.InetSocketAddress;
  * @Description: netty服务端
  */
 @Slf4j
-@Component
+@Component("localNettyServer")
 public class NettyServer {
 
     private final ServerBootstrap bootstrap = new ServerBootstrap();
