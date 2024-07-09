@@ -1,8 +1,13 @@
 package com.dpw.lyl.join.good.job.foundation.utils.threadpool;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.ss.formula.functions.T;
 
+import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.*;
+import java.util.function.Consumer;
 
 /**
  * @author Administrator
@@ -14,8 +19,8 @@ public class ThreadPoolUtil {
      * 优雅地关闭线程池，确保所有已提交的任务完成后再释放资源。
      *
      * @param executorService 线程池实例
-     * @param timeout 任务完成的等待超时时间
-     * @param unit 超时时间单位
+     * @param timeout         任务完成的等待超时时间
+     * @param unit            超时时间单位
      */
     public static void shutdownGracefully(ExecutorService executorService, long timeout, TimeUnit unit) {
         if (executorService != null && !executorService.isShutdown()) {
@@ -54,9 +59,7 @@ public class ThreadPoolUtil {
 
         ThreadFactory threadFactory = new ThreadFactoryBuilder()
                 .setNameFormat("MyPool-%d")
-                .setUncaughtExceptionHandler((t, e) -> {
-                    System.err.println("线程" + t.getName() + "中发生异常：" + e.getMessage());
-                })
+                .setUncaughtExceptionHandler((t, e) -> System.err.println("线程" + t.getName() + "中发生异常：" + e.getMessage()))
                 .build();
 
         return new ThreadPoolExecutor(
@@ -79,6 +82,32 @@ public class ThreadPoolUtil {
         }
     }
 
+    public static <T> void batchTask(List<T> tasks, Executor executor, Consumer<? super T> consumer) throws InterruptedException {
+
+        if (null == tasks || tasks.isEmpty()) {
+            return;
+        }
+
+        if (Objects.isNull(executor)) {
+            return;
+        }
+
+        CountDownLatch countDownLatch = new CountDownLatch(tasks.size());
+
+        for (T task : tasks) {
+            executor.execute(() -> {
+
+                try {
+                    consumer.accept(task);
+                } finally {
+                    countDownLatch.countDown();
+                }
+            });
+        }
+
+        countDownLatch.await();
+
+    }
 
 
     // 示例使用方法
