@@ -13,6 +13,7 @@ import com.dpw.lyl.join.good.job.task.entity.PayStrategy;
 import com.ijpay.alipay.AliPayApiConfig;
 import com.ijpay.alipay.AliPayApiConfigKit;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -78,6 +79,12 @@ public class ForGoodJobController extends AbstractForGoodJobController {
         return aliPayApiConfig;
     }
 
+
+    @GetMapping("/test/{method}")
+    public PayChannelResponseParam aliPayTest(@PathVariable("method") String method) {
+
+        return new PayChannelResponseParam();
+    }
 
 
 }

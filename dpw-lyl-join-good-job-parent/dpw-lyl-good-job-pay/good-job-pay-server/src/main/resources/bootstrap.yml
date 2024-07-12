@@ -6,18 +6,18 @@ spring:
   cloud:
     nacos:
       server-addr: 127.0.0.1:8848
+      username: nacos
+      password: 123456
       config:
-        username: nacos
-        password: nacos
-        namespace: 4ad81ca6-d1a3-4caf-8c5e-8645a75d0f03
+        namespace: 795c9c4d-b9b8-4345-9073-2a57920d12fb
         timeout: 3000
         refresh-enable: true #修改后自动加载
-        group: PAY_APPLICATION #配置组
+        group: DEFAULT_GROUP #配置组
         prefix: ${spring.application.name}
         file-extension: yaml #读取nacos配置文件后缀
         # 共享配置
         shared-configs:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
       discovery:
-        namespace: 4ad81ca6-d1a3-4caf-8c5e-8645a75d0f03
+        namespace: 795c9c4d-b9b8-4345-9073-2a57920d12fb
         server-addr: 127.0.0.1:8848
