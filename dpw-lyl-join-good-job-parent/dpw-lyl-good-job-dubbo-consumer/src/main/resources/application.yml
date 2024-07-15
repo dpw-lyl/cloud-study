@@ -1,0 +1,14 @@
+server:
+  port: 9081
+spring:
+   application:
+     name: dubbo-consumer
+dubbo:
+  consumer:
+    check: false
+  scan:
+    base-packages:  com.dpw.lyl.join.good.job
+  application:
+      name: dubbo-consumer
+  registry:
+      address: zookeeper://localhost:2181

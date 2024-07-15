@@ -1,5 +1,6 @@
 package com.dpw.lyl.join.good.job.pay.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.domain.AlipayTradeAppPayModel;
 import com.dpw.lyl.join.good.job.pay.constant.PayServiceConstant;
@@ -13,15 +14,13 @@ import com.dpw.lyl.join.good.job.task.entity.PayStrategy;
 import com.ijpay.alipay.AliPayApiConfig;
 import com.ijpay.alipay.AliPayApiConfigKit;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
 @RestController
 @RefreshScope
+@RequestMapping("/pay-service")
 public class ForGoodJobController extends AbstractForGoodJobController {
 
 
@@ -81,6 +80,7 @@ public class ForGoodJobController extends AbstractForGoodJobController {
 
 
     @GetMapping("/test/{method}")
+    @SentinelResource(value = "pay-service")
     public PayChannelResponseParam aliPayTest(@PathVariable("method") String method) {
 
         return new PayChannelResponseParam();

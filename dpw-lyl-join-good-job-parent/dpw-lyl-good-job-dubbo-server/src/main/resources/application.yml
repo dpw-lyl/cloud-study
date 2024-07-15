@@ -1,0 +1,15 @@
+server:
+  port: 9080
+spring:
+   application:
+     name: dubbo-provider
+dubbo:
+  scan:
+    base-packages:  com.dpw.lyl.join.good.job
+  application:
+      name: dubbo-provider
+  registry:
+      address: zookeeper://localhost:2181
+  protocol:
+      name: dubbo
+      port: 20880

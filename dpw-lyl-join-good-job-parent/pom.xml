@@ -26,6 +26,10 @@
         <module>dpw-lyl-good-job-interview</module>
         <module>dpw-lyl-good-job-im</module>
         <module>dpw-lyl-good-job-big-data</module>
+        <module>dpw-lyl-good-job-dubbo-server</module>
+        <module>dpw-lyl-good-job-dubbo-consumer</module>
+        <module>dpw-lyl-good-job-dubbo-server</module>
+        <module>dpw-lyl-good-job-dubbo-consumer</module>
     </modules>
 
 

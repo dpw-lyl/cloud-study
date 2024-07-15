@@ -21,5 +21,6 @@
         <module>good-job-foundation-swagger</module>
         <module>good-job-foundation-common-api</module>
         <module>good-job-foundation-captcha</module>
+        <module>good-job-foundation-common-service</module>
     </modules>
 </project>
