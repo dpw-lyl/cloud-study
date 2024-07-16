@@ -3,11 +3,10 @@ package com.dpw.lyl.join.good.job.pay.interceptor;
 import com.alipay.api.AlipayApiException;
 import com.dpw.lyl.join.good.job.pay.controller.AbstractForGoodJobController;
 import com.ijpay.alipay.AliPayApiConfigKit;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @Author: dengpw
@@ -18,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AliPayInterceptor implements HandlerInterceptor {
 
     @Override
-    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object handler) throws AlipayApiException {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         if (HandlerMethod.class.equals(handler.getClass())) {
             HandlerMethod method = (HandlerMethod) handler;
             Object controller = method.getBean();
@@ -30,5 +29,4 @@ public class AliPayInterceptor implements HandlerInterceptor {
         }
         return false;
     }
-
 }

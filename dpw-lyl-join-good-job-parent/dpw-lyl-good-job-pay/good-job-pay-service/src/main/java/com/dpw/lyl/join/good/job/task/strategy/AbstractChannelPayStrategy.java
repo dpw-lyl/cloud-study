@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.task.entity;
+package com.dpw.lyl.join.good.job.task.strategy;
 
 import com.dpw.lyl.join.good.job.pay.entity.PayChannelRequestParam;
 import com.dpw.lyl.join.good.job.pay.entity.PayChannelResponseParam;

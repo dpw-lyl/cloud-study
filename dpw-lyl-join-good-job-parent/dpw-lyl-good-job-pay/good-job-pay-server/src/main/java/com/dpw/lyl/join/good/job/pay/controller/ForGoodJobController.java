@@ -10,13 +10,13 @@ import com.dpw.lyl.join.good.job.pay.entity.PayChannelResponseParam;
 import com.dpw.lyl.join.good.job.pay.config.AliCommon;
 import com.dpw.lyl.join.good.job.foundation.utils.SpringUtils;
 import com.dpw.lyl.join.good.job.foundation.utils.StringUtils;
-import com.dpw.lyl.join.good.job.task.entity.PayStrategy;
+import com.dpw.lyl.join.good.job.task.strategy.PayStrategy;
 import com.ijpay.alipay.AliPayApiConfig;
 import com.ijpay.alipay.AliPayApiConfigKit;
+import jakarta.annotation.Resource;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 
 @RestController
 @RefreshScope

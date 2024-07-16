@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.task.entity;
+package com.dpw.lyl.join.good.job.task.strategy;
 
 /**
  * @Author: dengpw

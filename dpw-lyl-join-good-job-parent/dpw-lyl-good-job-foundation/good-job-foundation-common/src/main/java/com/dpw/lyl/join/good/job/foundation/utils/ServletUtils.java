@@ -78,7 +78,7 @@ public class ServletUtils {
      */
     public static HttpServletRequest getRequest() {
         try {
-            return getRequestAttributes().getRequest();
+            return (HttpServletRequest) getRequestAttributes().getRequest();
         } catch (Exception e) {
             return null;
         }
@@ -89,7 +89,7 @@ public class ServletUtils {
      */
     public static HttpServletResponse getResponse() {
         try {
-            return getRequestAttributes().getResponse();
+            return (HttpServletResponse) getRequestAttributes().getResponse();
         } catch (Exception e) {
             return null;
         }
