@@ -67,17 +67,17 @@
             <artifactId>fastjson2</artifactId>
         </dependency>
 
-        <!-- Jwt -->
+        <!-- Jwt
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
         </dependency>
 
-        <!-- Jaxb -->
+        &lt;!&ndash; Jaxb &ndash;&gt;
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!-- Apache Lang3 -->
         <dependency>
@@ -103,11 +103,11 @@
             <artifactId>poi-ooxml</artifactId>
         </dependency>
 
-        <!-- Java Servlet -->
+ <!--       &lt;!&ndash; Java Servlet &ndash;&gt;
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!-- Swagger -->
         <dependency>
