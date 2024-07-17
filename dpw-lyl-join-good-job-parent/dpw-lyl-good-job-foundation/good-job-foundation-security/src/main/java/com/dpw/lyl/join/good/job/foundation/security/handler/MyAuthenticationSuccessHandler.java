@@ -1,3 +1,4 @@
+/*
 package com.dpw.lyl.join.good.job.foundation.security.handler;
 
 
@@ -25,13 +26,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 
+*/
 /**
  * @Author: dengpw
  * @createTime: 2022年09月21 15:50:19
  * @version: 1.0.0
  * @date 2021年06月11日15:44
  * @desc
- */
+ *//*
+
 @Slf4j
 @Component("myAuthenticationSuccessHandler")
 public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
@@ -77,10 +80,12 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
         data.put("expiration", token.getExpiration());
 
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-       /* AjaxResult restResponse = new AjaxResult();
+       */
+/* AjaxResult restResponse = new AjaxResult();
         restResponse.put("code", ResultCodeEnum.SUCCESS.getCode());
         restResponse.put("msg", "登录成功");
-        restResponse.put("data", data);*/
+        restResponse.put("data", data);*//*
+
         response.setContentType("application/json;charset=UTF-8");
         log.info("登录成功,返回信息：" + JSONObject.toJSONString(""));
         AsyncManager.me().execute(AsyncFactory.recordLogininfor(userName, Constants.SUCCESS, MessageUtils.message("user.login.success")));
@@ -88,3 +93,4 @@ public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHand
     }
 
 }
+*/

@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.task.service;
+package com.dpw.lyl.join.good.job.pay.service;
 
 /**
   * @description:
@@ -13,4 +13,6 @@ public interface MqMangerService {
     void sendRabbitmqMessage(String destination, Object payload);
 
     void sendRocketMqMessage(String destination, Object payload);
+    void sendMqMessage(String destination, Object payload);
+
 }

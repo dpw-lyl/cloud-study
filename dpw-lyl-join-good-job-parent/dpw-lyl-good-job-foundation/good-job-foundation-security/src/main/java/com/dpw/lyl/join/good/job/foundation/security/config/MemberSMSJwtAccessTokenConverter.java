@@ -13,7 +13,8 @@
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
  * Author: lengleng (wangiegie@gmail.com)
- */
+ *//*
+
 
 package com.dpw.lyl.join.good.job.foundation.security.config;
 
@@ -26,12 +27,14 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import java.util.HashMap;
 import java.util.Map;
 
+*/
 /**
  * @Author: dengpw
  * @createTime: 2022年10月18 12:14:00
  * @version: 1.0.0
  * @Description: 短信登录转换
- */
+ *//*
+
 public class MemberSMSJwtAccessTokenConverter extends JwtAccessTokenConverter {
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
@@ -63,3 +66,4 @@ public class MemberSMSJwtAccessTokenConverter extends JwtAccessTokenConverter {
         return super.extractAuthentication(map);
     }
 }
+*/

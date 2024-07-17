@@ -13,7 +13,8 @@
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
  * Author: lengleng (wangiegie@gmail.com)
- */
+ *//*
+
 package com.dpw.lyl.join.good.job.foundation.security.handler;
 
 import cn.hutool.core.map.MapUtil;
@@ -34,10 +35,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.oauth2.common.OAuth2AccessToken;
-import org.springframework.security.oauth2.common.exceptions.UnapprovedClientAuthenticationException;
-import org.springframework.security.oauth2.provider.*;
-import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
@@ -46,11 +43,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
+*/
 /**
  * @author lengleng
  * @date 2018/1/8
  * 手机号登录成功，返回oauth token
- */
+ *//*
+
 @Slf4j
 @Component("smsLoginSuccessHandler")
 public class SMSLoginSuccessHandler implements AuthenticationSuccessHandler {
@@ -107,3 +106,4 @@ public class SMSLoginSuccessHandler implements AuthenticationSuccessHandler {
     }
 
 }
+*/

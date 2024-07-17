@@ -10,10 +10,13 @@ import com.dpw.lyl.join.good.job.pay.entity.PayChannelResponseParam;
 import com.dpw.lyl.join.good.job.pay.config.AliCommon;
 import com.dpw.lyl.join.good.job.foundation.utils.SpringUtils;
 import com.dpw.lyl.join.good.job.foundation.utils.StringUtils;
-import com.dpw.lyl.join.good.job.task.strategy.PayStrategy;
+import com.dpw.lyl.join.good.job.pay.handler.FunctionBasedReceiverHandler;
+import com.dpw.lyl.join.good.job.pay.service.MqMangerService;
+import com.dpw.lyl.join.good.job.pay.service.mq.MqCommonManager;
+import com.dpw.lyl.join.good.job.pay.strategy.PayStrategy;
 import com.ijpay.alipay.AliPayApiConfig;
 import com.ijpay.alipay.AliPayApiConfigKit;
-import jakarta.annotation.Resource;
+import lombok.AllArgsConstructor;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,12 +24,18 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RefreshScope
 @RequestMapping("/pay-service")
+@AllArgsConstructor
 public class ForGoodJobController extends AbstractForGoodJobController {
 
 
-    @Resource
-    private AliCommon aliCommon;
 
+    private final AliCommon aliCommon;
+
+    private final MqCommonManager mqCommonManager;
+
+    private final MqMangerService mqMangerService;
+
+    private final FunctionBasedReceiverHandler functionBasedReceiverHandler;
 
     @PostMapping("/aliPay/{method}")
     public PayChannelResponseParam aliPay(@PathVariable("method") String method) {
@@ -83,8 +92,19 @@ public class ForGoodJobController extends AbstractForGoodJobController {
     @SentinelResource(value = "pay-service")
     public PayChannelResponseParam aliPayTest(@PathVariable("method") String method) {
 
+        mqMangerService.sendMqMessage(method,method);
         return new PayChannelResponseParam();
     }
+
+    @GetMapping("/mq/{method}")
+    @SentinelResource(value = "pay-service")
+    public PayChannelResponseParam mqTest(@PathVariable("method") String method) {
+
+        mqCommonManager.processReceivedMessages(method);
+        return new PayChannelResponseParam();
+    }
+
+
 
 
 }

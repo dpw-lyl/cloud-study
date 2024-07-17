@@ -1,8 +1,8 @@
-package com.dpw.lyl.join.good.job.task.service.impl;
+package com.dpw.lyl.join.good.job.pay.service.impl;
 
-import com.dpw.lyl.join.good.job.task.service.MqMangerService;
-import com.dpw.lyl.join.good.job.task.service.mq.MqCommonManager;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.dpw.lyl.join.good.job.pay.service.mq.MqCommonManager;
+import com.dpw.lyl.join.good.job.pay.service.MqMangerService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 /**
   * @description:
@@ -11,15 +11,13 @@ import org.springframework.stereotype.Service;
   * @version:
  */
 @Service
+@AllArgsConstructor
 public class MqMangerServiceImpl implements MqMangerService {
 
 
     private final MqCommonManager mqCommonManager;
 
-    @Autowired
-    public MqMangerServiceImpl(MqCommonManager mqCommonManager) {
-        this.mqCommonManager = mqCommonManager;
-    }
+
 
 
     @Override
@@ -34,6 +32,11 @@ public class MqMangerServiceImpl implements MqMangerService {
 
     @Override
     public void sendRocketMqMessage(String destination, Object payload) {
+        mqCommonManager.sendMessage(destination, payload);
+    }
+
+    @Override
+    public void sendMqMessage(String destination, Object payload) {
         mqCommonManager.sendMessage(destination, payload);
     }
 }

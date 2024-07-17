@@ -21,6 +21,7 @@ package com.dpw.lyl.join.good.job.foundation.security.filter.sms;
 import com.dpw.lyl.join.good.job.foundation.domain.login.SMSLoginParam;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
+import jakarta.servlet.ServletException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -55,36 +56,14 @@ public class SMSAuthenticationFilter extends AbstractAuthenticationProcessingFil
         this.resolver = resolver;
     }
 
-    @Override
-    public Authentication attemptAuthentication(HttpServletRequest request,
-                                                HttpServletResponse response) throws AuthenticationException, IOException {
-        //判断请求方式
-        if (postOnly && !request.getMethod().equals(HttpMethod.POST.name())) {
-            throw new AuthenticationServiceException(
-                    "Authentication method not supported: " + request.getMethod());
-        }
-        SMSLoginParam h5LoginParam = obtainSMS(request);
-        SMSAuthenticationToken mobileAuthenticationToken = new SMSAuthenticationToken(h5LoginParam);
-        setDetails(request, mobileAuthenticationToken);
-        Authentication authenticate = null;
-        try {
-            authenticate = this.getAuthenticationManager().authenticate(mobileAuthenticationToken);
-        } catch (Exception e) {
-            //处理自定义异常
-            log.error("短信验证码登录错误：{}", e.toString());
-            e.printStackTrace();
-            resolver.resolveException(request, response, null, e);
-        }
-        return authenticate;
-    }
 
-    protected SMSLoginParam obtainSMS(HttpServletRequest request) throws IOException {
+    protected SMSLoginParam obtainSMS(jakarta.servlet.http.HttpServletRequest request) throws IOException {
         return objectMapper.readValue(request.getReader(), typeFactory.constructType(SMSLoginParam.class));
     }
 
     protected void setDetails(HttpServletRequest request,
                               SMSAuthenticationToken authRequest) {
-        authRequest.setDetails(authenticationDetailsSource.buildDetails(request));
+        authRequest.setDetails(authenticationDetailsSource.buildDetails((jakarta.servlet.http.HttpServletRequest) request));
     }
 
     public void setPostOnly(boolean postOnly) {
@@ -101,6 +80,28 @@ public class SMSAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
     public boolean isPostOnly() {
         return postOnly;
+    }
+
+    @Override
+    public Authentication attemptAuthentication(jakarta.servlet.http.HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response) throws AuthenticationException, IOException, ServletException {
+        //判断请求方式
+        if (postOnly && !request.getMethod().equals(HttpMethod.POST.name())) {
+            throw new AuthenticationServiceException(
+                    "Authentication method not supported: " + request.getMethod());
+        }
+        SMSLoginParam h5LoginParam = obtainSMS(request);
+        SMSAuthenticationToken mobileAuthenticationToken = new SMSAuthenticationToken(h5LoginParam);
+        setDetails((HttpServletRequest) request, mobileAuthenticationToken);
+        Authentication authenticate = null;
+        try {
+            authenticate = this.getAuthenticationManager().authenticate(mobileAuthenticationToken);
+        } catch (Exception e) {
+            //处理自定义异常
+            log.error("短信验证码登录错误：{}", e.toString());
+            e.printStackTrace();
+            resolver.resolveException(request, response, null, e);
+        }
+        return authenticate;
     }
 }
 

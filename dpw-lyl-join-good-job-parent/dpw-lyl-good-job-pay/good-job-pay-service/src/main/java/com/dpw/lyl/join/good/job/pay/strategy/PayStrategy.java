@@ -1,4 +1,4 @@
-package com.dpw.lyl.join.good.job.task.strategy;
+package com.dpw.lyl.join.good.job.pay.strategy;
 
 /**
  * @Author: dengpw
